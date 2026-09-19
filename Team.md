@@ -5,34 +5,21 @@ Please fill in the details below before submitting your project.
 ## Team Details
 
 **Team Name:**
-`Your Team Name`
+`SoloGuy`
 
 **Team Size:**
-`1 / 2`
+`1`
 
 ### Participant 1
 
 **Name:**
-`Your Name`
+`Ajo Jose`
 
 **Email:**
-`your@email.com`
+`ajojosee@gmail.com`
 
 **GitHub:**
-`https://github.com/username`
-
-### Participant 2
-
-**Name:**
-`Your Name`
-
-**Email:**
-`your@email.com`
-
-**GitHub:**
-`https://github.com/username`
-
-> If participating solo, leave Participant 2 blank.
+`https://github.com/AjoJosee`
 
 ---
 
@@ -41,21 +28,22 @@ Please fill in the details below before submitting your project.
 ### Original Website
 
 **Website Name:**
-`Name of the website`
+`TinkerHub`
 
 **Original Website URL:**
-`https://example.com`
+`https://example.com](https://tinkerhubcet.github.io/
+`
 
 ### Your Redesign
 
 **Project Name:**
-`Name of your redesign`
+`Tinkerhub Revanced`
 
 **Live Website:**
 `https://your-deployment-url.com`
 
 **Repository:**
-`https://github.com/username/repository`
+`https://github.com/AjoJosee/Website-Re-Design`
 
 ---
 
@@ -96,7 +84,7 @@ List the technologies, frameworks, and tools used.
 
 Before submitting, make sure:
 
-* [ ] Team information is complete
+* [X] Team information is complete
 * [ ] Website is functional
 * [ ] Website is responsive
 * [ ] Source code is pushed to this repository
