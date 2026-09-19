@@ -1,74 +1,36 @@
-# Website Re:Design
+# TinkerHub CET - Website Re-Design
 
-### See It. Rethink It. Rebuild It.
+Welcome to the new **TinkerHub CET** website, built for the **Website Re:Design Challenge** (Drishti 2026 x Tinkerhub CET).
 
-Think you can make a website better?
+## Live Site
+🌍 **[Hosted on GitHub Pages](https://AjoJosee.github.io/Website-Re-Design/)**
 
-**Website Re:Design** is a fast-paced design and development competition where participants will completely rethink an existing website — under a strict **3-hour time limit**.
+## About This Project
+This project completely reimagines the TinkerHub CET community web presence. Moving away from standard corporate templates, this redesign captures the true spirit of TinkerHub: fun, youthful, experimental, and deeply connected to maker culture. 
 
-The catch? **You won't know what you're redesigning until the competition begins.**
+The design is heavily inspired by the official **TinkerHub CET Designers' Handbook**, incorporating its strict color palette, typography styles, and playful interactions. 
 
-Work solo or team up with a partner. Choose your tools, frameworks, and approach, then transform the given problem into a functional, responsive, and polished web experience.
+### Key Features
+- **Draggable Stickers:** Interactive, 360-degree floating elements (with sounds!).
+- **Interactive Easter Eggs:** Tap on the Execom members to trigger unique pranks (like KTU panic, anti-gravity, CRT matrix terminal).
+- **Certificate Generator:** Officially stamp and download a "Certified Tinkerer" pass.
+- **Dream vs Reality Slider:** Slide between conventional theory and actual TinkerHub hands-on reality.
+- **Scroll Progress & Reveals:** Smooth scroll animations and dynamic progress bars.
 
----
+## Tech Stack
+- Pure HTML, CSS, and Vanilla JavaScript
+- **Zero frameworks** or heavy libraries (just pure maker spirit)
+- Web Audio API for interactive sound effects
+- Canvas API for dynamic confetti bursts
 
-## Event Details
+## Installation & Local Setup
+To run this project locally, simply clone it and run a local server:
 
-* **Event Type:** Competition
-* **Registration:** Free
-* **Team Size:** 1–2 participants
-* **Duration:** 3 hours
-* **Technology:** Any
-
----
-
-## The Challenge
-
-The website and problem statement will be revealed **only when the competition starts**.
-
-From there, you'll have just **three hours** to rethink the experience and build your solution.
-
-Your final submission must be **functional**, not just a visual mockup.
-
----
-
-## What We're Looking For
-
-Your work will be evaluated on:
-
-* UI & Visual Design
-* UX & Usability
-* Creativity
-* Functionality
-* Responsiveness
-* Quality of Implementation
-* Completion within the time limit
-* Originality of Code
+```bash
+git clone https://github.com/AjoJosee/Website-Re-Design.git
+cd Website-Re-Design
+npx serve .
+```
 
 ---
-
-## Rules
-
-* Use any technology, framework, or design tool unless otherwise specified.
-* Your submission must be functional.
-* Your solution should be responsive.
-* Focus on delivering a polished experience rather than unfinished features.
-* Your code should be your own work.
-* Stay within the **3-hour time limit**.
-* Additional rules, if any, will be announced at the beginning of the competition.
-
----
-
-## Submission
-
-Your final submission should include:
-
-* Source code
-* A working deployment, if applicable
-* Any additional submission details specified by the organizers
-
----
-
-## The Clock Starts Now.
-
-**Think fast. Design smart. Build better.**
+*Built with ❤️ and ☕ for Drishti 2026.*

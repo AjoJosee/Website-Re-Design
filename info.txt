@@ -1,0 +1,76 @@
+Website Re-Design Challenge
+Drishti 2026 x Tinkerhub CET
+
+
+The Challenge
+
+Redesign the TinkerHub CET website and reimagine how the community could be represented on the web.
+
+The goal is to create a website that feels fun, creative, youthful and experimental, while still being professional and easy to navigate.
+
+Reference Websites
+
+Existing TinkerHub CET website:
+https://tinkerhubcet.github.io/
+
+TinkerHub:
+https://tinkerhub.org/
+
+Use these as references for understanding the existing identity and community. You are encouraged to take the visual language in a new direction rather than simply recreating the current website.
+
+
+Design Direction
+
+The website should:
+
+- Retain a visual connection to the existing TinkerHub CET colour theme.
+- Feel fun and experimental, while maintaining a professional finish.
+- Have a strong and creative landing page.
+- Use interesting interactions, animations or visual elements where appropriate.
+- Represent the community and its people, not just its activities.
+- Have a clear and intuitive user experience.
+
+Suggested Sections
+
+
+ Landing Page: Create an engaging and memorable first impression of TinkerHub CET.
+
+About: Introduce TinkerHub CET, what it stands for and what the community does.
+
+Events / Activities: Showcase the events, workshops, hackathons, sessions and other activities conducted by the community.
+
+Maker Kootam/Projects: Highlight projects and things built by the community.
+
+Into the History: Create a section dedicated to the history of TinkerHub CET, including previous Execom/Core teams and the people who have contributed to the community over the years.
+
+Current Team: Introduce the current Execom/Core.
+
+Contact: Provide ways for visitors to get in touch and find TinkerHub CET online.
+
+Get Creative
+
+You are encouraged to add your own sections and ideas.
+
+Some possibilities:
+
+- Interactive community timeline
+- TinkerHub archive
+- Member stories
+- Fun interactive elements
+- Easter eggs
+- Mini-games
+- Experimental navigation
+- Creative project showcase
+- "TinkerHub culture" section
+
+There is no fixed structure beyond the suggested sections.
+
+General Guidelines
+
+- Prioritize originality and creativity.
+- Keep the website responsive across desktop and mobile.
+- Maintain good readability and usability.
+- Don't simply copy the existing TinkerHub CET website or other references.
+- Use animations  and interactions purposefully.
+- Keep the design consistent with the TinkerHub CET identity.
+- The final website should feel like a real, polished website, not just a design mockup.

@@ -348,44 +348,42 @@ function initScrollEngine() {
 }
 
 // ==========================================
-// 4. DRAGGABLE STICKERS WITH SOUNDS
+// 4. DRAGGABLE STICKERS WITH 360° FREE DRAG & TILT
 // ==========================================
 function initDraggableStickers() {
   const stickers = document.querySelectorAll('.sticker');
 
   stickers.forEach(sticker => {
     let isDragging = false;
-    let startX, startY, origX, origY;
+    let startX, startY, startLeft, startTop;
 
     sticker.addEventListener('pointerdown', (e) => {
       isDragging = true;
-      sticker.setPointerCapture(e.pointerId);
+      try { sticker.setPointerCapture(e.pointerId); } catch(e){}
       sfx.playBoing();
 
-      const rect = sticker.getBoundingClientRect();
       startX = e.clientX;
       startY = e.clientY;
-      origX = rect.left;
-      origY = rect.top;
-
-      sticker.style.position = 'fixed';
-      sticker.style.left = `${origX}px`;
-      sticker.style.top = `${origY}px`;
-      sticker.style.zIndex = '999';
+      
+      const style = window.getComputedStyle(sticker);
+      startLeft = parseFloat(style.left) || 0;
+      startTop = parseFloat(style.top) || 0;
+      
+      // If it was percentage-based, it becomes pixels after we set it
     });
 
     sticker.addEventListener('pointermove', (e) => {
       if (!isDragging) return;
       const dx = e.clientX - startX;
       const dy = e.clientY - startY;
-      sticker.style.left = `${origX + dx}px`;
-      sticker.style.top = `${origY + dy}px`;
+      sticker.style.left = `${startLeft + dx}px`;
+      sticker.style.top = `${startTop + dy}px`;
     });
 
     const endDrag = (e) => {
       if (!isDragging) return;
       isDragging = false;
-      sticker.releasePointerCapture(e.pointerId);
+      try { sticker.releasePointerCapture(e.pointerId); } catch(e){}
       sfx.playClick();
       confetti.burst(e.clientX, e.clientY, 15);
     };
@@ -739,63 +737,6 @@ function initProjectUpvotes() {
   });
 }
 
-// ==========================================
-// 8. HANDBOOK STATUS MAKER
-// ==========================================
-function initStatusMaker() {
-  const titleInput = document.getElementById('status-input-title');
-  const speakerInput = document.getElementById('status-input-speaker');
-  const typeSelect = document.getElementById('status-input-type');
-  const themeToggle = document.getElementById('status-theme-select');
-  const colorSelect = document.getElementById('status-accent-select');
-
-  const frame = document.getElementById('status-preview-frame');
-  const posterTitle = document.getElementById('status-poster-title');
-  const posterSpeaker = document.getElementById('status-poster-speaker');
-  const posterTag = document.getElementById('status-poster-tag');
-  const innerPoster = document.getElementById('status-inner-poster');
-
-  if (!titleInput || !frame) return;
-
-  function updateStatus() {
-    if (posterTitle) posterTitle.textContent = titleInput.value.trim() || "Event Title Here";
-    if (posterSpeaker) posterSpeaker.textContent = speakerInput.value.trim() ? `Speaker: ${speakerInput.value.trim()}` : "Speaker: TBA";
-    if (posterTag) posterTag.textContent = typeSelect.value;
-
-    // Checkerboard Alternation: Light Theme vs Dark Theme
-    if (themeToggle && themeToggle.value === 'dark') {
-      frame.classList.remove('light-spec');
-      frame.classList.add('dark-spec');
-    } else if (themeToggle) {
-      frame.classList.remove('dark-spec');
-      frame.classList.add('light-spec');
-    }
-
-    if (colorSelect && innerPoster) {
-      const accent = colorSelect.value;
-      innerPoster.style.borderColor = accent;
-      if (posterTag) {
-        posterTag.style.backgroundColor = accent;
-        posterTag.style.color = (accent === '#FFCD10' || accent === '#95BF15' || accent === '#05BFCE') ? '#1A1F20' : '#FFFFFF';
-      }
-    }
-  }
-
-  [titleInput, speakerInput, typeSelect, themeToggle, colorSelect].forEach(el => {
-    if (el) {
-      el.addEventListener('input', () => {
-        updateStatus();
-        sfx.playClick();
-      });
-      el.addEventListener('change', () => {
-        updateStatus();
-        sfx.playPop();
-      });
-    }
-  });
-
-  updateStatus();
-}
 
 // ==========================================
 // 9. THEME, AUDIO & MOBILE NAV
@@ -898,7 +839,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollEngine();
   initDraggableStickers();
   initCertificateGenerator();
-  initStatusMaker();
   initProjectUpvotes();
   initPrankEngine();
   initDreamRealitySlider();

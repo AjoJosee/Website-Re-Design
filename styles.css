@@ -783,12 +783,13 @@ body.dark-mode .stat-num {
   filter: drop-shadow(3px 3px 0px rgba(26, 31, 32, 0.4));
   transition: transform 0.15s ease;
   touch-action: none;
+  box-sizing: border-box;
 }
 
 .sticker:active {
   cursor: grabbing;
   transform: scale(1.12) rotate(4deg) !important;
-  z-index: 50;
+  z-index: 99999;
 }
 
 .sticker-round {
@@ -805,6 +806,7 @@ body.dark-mode .stat-num {
   text-align: center;
   border: 3px solid #1A1F20;
   line-height: 1.1;
+  box-sizing: border-box;
 }
 
 .sticker-oval {
@@ -815,6 +817,9 @@ body.dark-mode .stat-num {
   font-weight: 700;
   border: 2.5px solid #1A1F20;
   white-space: nowrap;
+  width: max-content;
+  max-width: max-content;
+  box-sizing: border-box;
 }
 
 /* SECTION STRUCTURE */
@@ -1263,97 +1268,35 @@ body.dark-mode .filter-btn.active {
   margin: 12px 0 20px;
 }
 
-/* HANDBOOK STATUS MAKER */
-.status-maker-section {
-  background: var(--bg-card);
-  border: 4px solid var(--paper-border);
-  border-radius: 12px;
-  box-shadow: var(--shadow-hard-lg);
-  padding: 40px 30px;
-  margin: 40px auto;
-  position: relative;
-}
-
-.status-maker-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 36px;
-  align-items: center;
-}
-
-@media (max-width: 900px) {
-  .status-maker-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.handbook-status-frame {
-  width: 280px;
-  height: 497px; /* 720:1280 aspect ratio */
-  margin: 0 auto;
-  border-radius: 14px;
-  border: 3px solid #1A1F20;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  transition: var(--transition-fluid);
-  overflow: hidden;
-}
-
-.handbook-status-frame.light-spec {
-  background-color: #FFFFFF;
-  color: #1A1F20;
-  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.handbook-status-frame.dark-spec {
-  background-color: #1A1F20;
+/* INTERACTIVE AVATAR TAP BADGE */
+.tap-hint-badge {
+  position: absolute;
+  top: -12px;
+  right: -8px;
+  background: var(--tinker-red);
   color: #FFFFFF;
-  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.55);
-}
-
-.status-inner-poster {
-  width: 90%;
-  aspect-ratio: 1 / 1;
-  border: 2px solid currentColor;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 14px;
-  position: relative;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.status-logo-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.status-logo-img {
-  width: 38px;
-  height: 38px;
-  padding: 4px;
-  border-radius: 50%;
-  background: white;
-  border: 1px solid #1A1F20;
-}
-
-.status-poster-title {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 0.65rem;
   font-weight: 900;
-  line-height: 1.2;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1.5px solid #1A1F20;
+  box-shadow: 2px 2px 0px #1A1F20;
+  pointer-events: none;
+  animation: tapHintPulse 1.2s infinite ease-in-out alternate;
+  white-space: nowrap;
+  z-index: 10;
+  letter-spacing: 0.02em;
 }
 
-.status-poster-meta {
-  font-family: var(--font-typewriter);
-  font-size: 0.7rem;
-  opacity: 0.85;
+body.dark-mode .tap-hint-badge {
+  border-color: #FFCD10;
+  box-shadow: 2px 2px 0px #FFCD10;
+}
+
+@keyframes tapHintPulse {
+  0% { transform: scale(1) rotate(-5deg); }
+  100% { transform: scale(1.15) rotate(6deg); }
 }
 
 /* HISTORY & ARCHIVES */
@@ -1455,7 +1398,7 @@ body.dark-mode .filter-btn.active {
   box-shadow: var(--shadow-hard-sm);
   font-size: 2.2rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   cursor: pointer;
   transition: var(--transition-fluid);
 }

@@ -80,7 +80,6 @@
         <li><a href="about.html" class="nav-link">About & History</a></li>
         <li><a href="events.html" class="nav-link">Events</a></li>
         <li><a href="projects.html" class="nav-link">Maker Kootam</a></li>
-        <li><a href="poster-lab.html" class="nav-link">Poster Lab</a></li>
         <li><a href="team.html" class="nav-link">Team</a></li>
       </ul>
 
@@ -96,12 +95,12 @@
   <!-- HERO SECTION -->
   <header id="hero" class="hero-section">
     <!-- Draggable Floating Stickers -->
-    <div class="sticker sticker-round" style="top: 15px; right: 48%; background: var(--tinker-yellow); transform: rotate(-8deg);">
+    <div class="sticker sticker-round" style="top: 15px; left: 45%; background: var(--tinker-yellow); transform: rotate(-8deg);">
       <span>0g</span>
       <span style="font-size:0.65rem; font-family:var(--font-typewriter);">FORMALITIES</span>
     </div>
 
-    <div class="sticker sticker-oval" style="top: 160px; right: 2%; background: var(--tinker-cyan); color: var(--tinker-black); transform: rotate(12deg);">
+    <div class="sticker sticker-oval" style="top: 160px; left: 50%; background: var(--tinker-cyan); color: var(--tinker-black); transform: translateX(-50%) rotate(12deg);">
       ✨ drag me anywhere!
     </div>
 
@@ -148,7 +147,11 @@
           </a>
           <!-- Prank 1 Trigger: KTU Attendance Panic! -->
           <button class="btn-fun btn-white trigger-ktu-panic" title="Warning: Suspiciously generous">
-            Claim Free Canteen Samosa Pass 🥟
+            Claim Free Canteen Samosa 🥟
+          </button>
+          <!-- Prank 4 Trigger: Rickroll 2.0 Retro TV! -->
+          <button class="btn-fun btn-red trigger-rickroll" title="Top Secret Execom Reel">
+            Secret CET Anthem 📼
           </button>
           <a href="#certificate-section" class="btn-fun btn-yellow">
             Get Certified Tinkerer Pass ↓
@@ -352,6 +355,91 @@
     </div>
   </section>
 
+  <!-- THE CORE CREW (TAP ANY AVATAR FOR SURPRISE EASTER EGGS!) -->
+  <section class="content-section reveal-on-scroll">
+    <div class="section-header" style="text-align: center; margin-bottom: 30px;">
+      <span class="section-tag" style="background: var(--th-butter); color: var(--tinker-black);">Interactive Execom</span>
+      <h2 class="section-title">The Steering Crew</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">
+        The humans keeping the servers running with zero sleep. <strong>Tap any avatar below</strong> to trigger their secret engineering powers & prank easter eggs!
+      </p>
+    </div>
+
+    <div class="team-grid">
+      <!-- Member 1: President -->
+      <div class="team-card reveal-on-scroll">
+        <div class="team-avatar-box" onclick="sfx.playBoing(); alert('🤠 President says: Stop reading slides, start pushing commits to GitHub!');" title="Tap President avatar!">
+          
+          🤠
+        </div>
+        <div class="team-name">President</div>
+        <div class="team-role">Chief Chaos Officer</div>
+        <div class="team-quirk">"Convinces the Dean that a 24-hour hackathon counts as academic attendance."</div>
+      </div>
+
+      <!-- Member 2: Tech Lead (triggers Matrix Hack) -->
+      <div class="team-card reveal-on-scroll">
+        <div class="team-avatar-box trigger-matrix-hack" title="Tap Tech Lead avatar!">
+          
+          💻
+        </div>
+        <div class="team-name">Tech Lead</div>
+        <div class="team-role">Senior Bug Generator</div>
+        <div class="team-quirk">"It worked on localhost, so technically production is at fault."</div>
+      </div>
+
+      <!-- Member 3: Design Head (triggers Anti-Gravity) -->
+      <div class="team-card reveal-on-scroll">
+        <div class="team-avatar-box trigger-antigravity" title="Tap Design Head avatar!">
+          
+          🎨
+        </div>
+        <div class="team-name">Design Head</div>
+        <div class="team-role">Figma Wizard</div>
+        <div class="team-quirk">"Obsessed with 10% logo padding and the sacred #FFCD10 Tinker Yellow."</div>
+      </div>
+
+      <!-- Member 4: WIT Lead -->
+      <div class="team-card reveal-on-scroll">
+        <div class="team-avatar-box" style="background: var(--tinker-teal); color: var(--tinker-yellow); border: 3px solid var(--tinker-yellow); box-shadow: 4px 4px 0px #1A1F20;" onclick="sfx.playFanfare(); confetti.burst(event.clientX, event.clientY, 60);" title="Tap WIT Lead avatar!">
+          
+          <span style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); font-size: 2.4rem;">⚡</span>
+        </div>
+        <div class="team-name">WIT Lead</div>
+        <div class="team-role">Community Catalyst</div>
+        <div class="team-quirk">"Empowering women in engineering to build real software and lead hackathons."</div>
+      </div>
+
+      <!-- Member 5: Operations Head -->
+      <div class="team-card reveal-on-scroll">
+        <div class="team-avatar-box" onclick="sfx.playSqueak(); alert('🔑 Seminar Hall Key acquired from Mechanical Dept peon!');" title="Tap Operations Head avatar!">
+          
+          📋
+        </div>
+        <div class="team-name">Operations Head</div>
+        <div class="team-role">Hall Negotiator</div>
+        <div class="team-quirk">"Knows exactly which department peon holds the spare projector HDMI cable."</div>
+      </div>
+
+      <!-- Member 6: Content Head (triggers Rickroll!) -->
+      <div class="team-card reveal-on-scroll">
+        <div class="team-avatar-box trigger-rickroll" title="Tap Content Head avatar!">
+          
+          ✍️
+        </div>
+        <div class="team-name">Content Head</div>
+        <div class="team-role">Meme Alchemist</div>
+        <div class="team-quirk">"Turns Git tutorials into viral reels that even Civil engineers upvote."</div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 24px;">
+      <a href="team.html" class="btn-fun btn-white">
+        View Full Execom & Stories ↗
+      </a>
+    </div>
+  </section>
+
   <!-- INTERACTIVE CERTIFICATE GENERATOR (PRINT & PNG DOWNLOAD) -->
   <section id="certificate-section" class="content-section reveal-on-scroll">
     <div class="cert-interactive-section">
@@ -552,7 +640,6 @@
             <li><a href="about.html">About & History</a></li>
             <li><a href="events.html">Events & Hackathons</a></li>
             <li><a href="projects.html">Maker Kootam Projects</a></li>
-            <li><a href="poster-lab.html">Sudev Suresh Poster Lab</a></li>
             <li><a href="team.html">Current Execom Team</a></li>
           </ul>
         </div>
@@ -565,8 +652,8 @@
             <li><a href="https://twitter.com/TinkerhubC" target="_blank" rel="noopener noreferrer">Twitter / X (@TinkerhubC) ↗</a></li>
             <li><a href="https://tinyurl.com/tinkerhubcet" target="_blank" rel="noopener noreferrer">Join Link (tinyurl) ↗</a></li>
             <li><a href="mailto:tinkercet@gmail.com">tinkercet@gmail.com ✉️</a></li>
-            <!-- Prank 2 Trigger: Matrix Hacker Terminal! -->
-            <li><a href="#" class="trigger-matrix-hack" style="color: var(--tinker-red);">Admin Master Key 🔑</a></li>
+            <!-- Prank 4 Trigger: Rickroll 2.0 Retro TV! -->
+            <li><a href="#" class="trigger-rickroll" style="color: var(--tinker-red);">Admin Master Key 🔑</a></li>
           </ul>
         </div>
       </div>
