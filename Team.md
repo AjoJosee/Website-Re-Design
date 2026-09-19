@@ -31,7 +31,7 @@ Please fill in the details below before submitting your project.
 `TinkerHub`
 
 **Original Website URL:**
-`https://example.com](https://tinkerhubcet.github.io/
+`https://tinkerhubcet.github.io/
 `
 
 ### Your Redesign
