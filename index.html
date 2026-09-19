@@ -6,10 +6,10 @@
   <meta name="theme-color" content="#FBF6E6">
   <title>TinkerHub CET · Where Engineers Actually Build Things</title>
   
-  <!-- Google Fonts: Patrick Hand, Caveat, Special Elite, Montserrat, Space Grotesk -->
+  <!-- Google Fonts: Instrument Serif, Patrick Hand, Caveat, Special Elite, Montserrat, Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;700;800;900&family=Patrick+Hand&family=Space+Grotesk:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Caveat:wght@600;700&family=Montserrat:wght@400;700;800;900&family=Patrick+Hand&family=Space+Grotesk:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
   
   <link rel="icon" href="assets/images/tinkLogo.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
@@ -91,6 +91,11 @@
       ✨ drag me anywhere!
     </div>
 
+    <!-- Starburst Sticker (tinkerhub.org inspiration) -->
+    <div class="sticker sticker-starburst" style="top: 260px; left: -15px;">
+      <span>100%<br>HANDS ON</span>
+    </div>
+
     <!-- Anti-Gravity Prank Trigger Sticker! -->
     <div class="sticker sticker-round trigger-antigravity" style="bottom: 40px; left: 2%; background: var(--tinker-red); color: white; transform: rotate(15deg); cursor: pointer;" title="Warning: Do not tap!">
       <span style="font-size:1.1rem;">⚠️</span>
@@ -106,6 +111,10 @@
             CHAPTER: CET TRIVANDRUM
           </span>
           <span class="stamp stamp-teal" style="font-size: 0.75rem; padding: 4px 8px;">100% STUDENT DRIVEN</span>
+        </div>
+
+        <div class="font-serif-italic" style="font-size: 1.45rem; color: var(--th-indigo); margin-bottom: 6px;">
+          Join the celebration of learning · The space between dream & reality
         </div>
 
         <h1 class="hero-title">
@@ -202,6 +211,105 @@
       </div>
     </div>
   </header>
+
+  <!-- THE SPACE BETWEEN DREAM & REALITY (tinkerhub.org homage) -->
+  <section class="content-section reveal-on-scroll">
+    <div class="dream-reality-box">
+      <div class="washi-tape washi-tape-top"></div>
+      <span class="section-tag" style="background: var(--th-indigo); color: white;">Interactive Paradigm</span>
+      <h2 class="section-title" style="margin-top: 8px;">The Space Between <span class="font-serif-italic">dream & reality</span></h2>
+      <p class="section-subtitle" style="margin: 0 auto; max-width: 620px;">
+        Slide between conventional engineering classroom theory and real TinkerHub hands-on reality at CET.
+      </p>
+
+      <div class="dream-slider-wrap">
+        <input type="range" id="dream-reality-slider" class="dream-slider" min="0" max="100" value="75" aria-label="Dream vs Reality slider">
+        <div style="display:flex; justify-content:space-between; font-family:var(--font-typewriter); font-size:0.75rem; margin-top:8px; color:var(--ink-muted);">
+          <span>THEORY (0%)</span>
+          <span>SERIES CRAM (33%)</span>
+          <span>FIRST HACK (66%)</span>
+          <span>TINKER REALITY (100%)</span>
+        </div>
+      </div>
+
+      <div class="dream-display-card">
+        <span id="dream-level-badge" class="dream-level-badge">REALITY (100% - TINKERHUB CET)</span>
+        <div id="dream-statement-text" class="dream-statement-text">
+          "Shipped an autonomous assistive device for ALS patients, open-sourced a full-stack web tool, and celebrated with the community!"
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR FOUR PILLARS (tinkerhub.org homage) -->
+  <section class="content-section reveal-on-scroll">
+    <div class="section-header">
+      <span class="section-tag" style="background: var(--th-pink); color: var(--tinker-black);">Core Foundation</span>
+      <h2 class="section-title">Our Four Pillars <span class="font-serif-italic">that guide us</span></h2>
+      <p class="section-subtitle">
+        How TinkerHub CET brings its vision to life across campus, directly aligned with the foundation's mission.
+      </p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-num">01</div>
+        <h3 class="pillar-title">Campus Learning Culture</h3>
+        <p class="pillar-desc">
+          Build a learning culture on campus that connects, inspires, and engages students. Enabling hands-on, inter-disciplinary experimentation without bureaucratic boundaries.
+        </p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num">02</div>
+        <h3 class="pillar-title">The Maker Ecosystem</h3>
+        <p class="pillar-desc">
+          The power lies in an ecosystem of makers that nurtures togetherness, fosters a deep sense of belonging, and empowers students to turn ideas into working prototypes.
+        </p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num">03</div>
+        <h3 class="pillar-title">Empathy & Compassion</h3>
+        <p class="pillar-desc">
+          Witnessing how even small software and hardware solutions positively impact someone's life—from assistive ALS devices to food distribution pipelines for orphanages.
+        </p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num">04</div>
+        <h3 class="pillar-title">Beyond Just a Job Offer</h3>
+        <p class="pillar-desc">
+          While career growth is essential, true development is not limited to campus placements. It involves cultivating genuine curiosity, critical thinking, and a lifelong maker mindset.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAKER OF THE MONTH SPOTLIGHT (tinkerhub.org homage) -->
+  <section class="content-section reveal-on-scroll">
+    <div class="maker-spotlight-card">
+      <div class="maker-spotlight-img">
+        <img src="assets/images/vishnu.jpg" alt="Student Maker of the Month">
+      </div>
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+          <span class="stamp stamp-teal" style="font-size:0.68rem; padding:2px 8px;">MAKER SPOTLIGHT</span>
+          <span style="font-family:var(--font-typewriter); font-size:0.8rem; color:var(--ink-muted);">CAMPUS CHAPTER FEATURE</span>
+        </div>
+        <h3 style="font-family:var(--font-display); font-size:1.8rem; margin-bottom:8px;">
+          Vishnu Prakash <span class="font-serif-italic" style="font-size:1.2rem; color:var(--tinker-teal);">· Ethereum India Fellow</span>
+        </h3>
+        <p style="font-family:var(--font-friendly); font-size:1.15rem; color:var(--ink-muted); line-height:1.45; margin-bottom:14px;">
+          "Blockchain is one of those technologies where innovation happens daily. Staying curious, building side projects, and sharing knowledge with juniors at CET made all the difference."
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="projects.html" class="btn-fun btn-yellow" style="font-size:0.82rem; padding:5px 12px;">See Community Builds ↗</a>
+          <a href="about.html" class="btn-fun btn-white" style="font-size:0.82rem; padding:5px 12px;">Read Story 📖</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- QUICK EXPLORE TILES -->
   <section class="content-section reveal-on-scroll">

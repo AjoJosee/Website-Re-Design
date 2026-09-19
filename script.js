@@ -837,7 +837,62 @@ function initThemeAndAudioControls() {
 }
 
 // ==========================================
-// 10. BOOTSTRAP ON LOAD
+// 10. DREAM & REALITY SLIDER (tinkerhub.org inspiration)
+// ==========================================
+function initDreamRealitySlider() {
+  const slider = document.getElementById('dream-reality-slider');
+  const badge = document.getElementById('dream-level-badge');
+  const statement = document.getElementById('dream-statement-text');
+
+  if (!slider || !badge || !statement) return;
+
+  const states = [
+    {
+      level: "THEORY (0% - CLASSROOM)",
+      text: "Write 45 pages in blue ballpoint pen defining what a for-loop does while praying the external lab examiner is in a good mood.",
+      badgeColor: "#FFCD10",
+      textColor: "#1A1F20"
+    },
+    {
+      level: "THE STRUGGLE (33% - SERIES EXAM EVE)",
+      text: "Cramming 5 modules in 4 hours, drinking lukewarm hostel coffee, and wondering why we aren't allowed to Google syntax during exams.",
+      badgeColor: "#F79CFF",
+      textColor: "#1A1F20"
+    },
+    {
+      level: "THE SPARK (66% - FIRST WEEKEND HACK)",
+      text: "Sitting at PG Canteen with a junior, breadboard wired to an ESP32, debugging at 1:30 AM until the LED finally blinks.",
+      badgeColor: "#05BFCE",
+      textColor: "#1A1F20"
+    },
+    {
+      level: "REALITY (100% - TINKERHUB CET)",
+      text: "Shipped an autonomous assistive device for ALS patients, open-sourced a full-stack web tool, and celebrated with the community!",
+      badgeColor: "#95BF15",
+      textColor: "#1A1F20"
+    }
+  ];
+
+  function update() {
+    const val = parseInt(slider.value, 10);
+    const idx = Math.min(Math.floor((val / 100) * states.length), states.length - 1);
+    const current = states[idx];
+    badge.textContent = current.level;
+    badge.style.backgroundColor = current.badgeColor;
+    badge.style.color = current.textColor;
+    statement.textContent = `"${current.text}"`;
+  }
+
+  slider.addEventListener('input', () => {
+    update();
+    sfx.playClick();
+  });
+
+  update();
+}
+
+// ==========================================
+// 11. BOOTSTRAP ON LOAD
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
   initScrollEngine();
@@ -846,6 +901,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStatusMaker();
   initProjectUpvotes();
   initPrankEngine();
+  initDreamRealitySlider();
   initThemeAndAudioControls();
 
   // Resume Web Audio on first user interaction
