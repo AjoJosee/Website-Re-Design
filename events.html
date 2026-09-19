@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FBF6E6">
+  <title>Events & Activities · TinkerHub CET</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;700;800;900&family=Patrick+Hand&family=Space+Grotesk:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="assets/images/tinkLogo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="scroll-progress-bar" aria-hidden="true"></div>
+  <div class="notebook-margin-line" aria-hidden="true"></div>
+
+  <!-- Announcement Ticker -->
+  <div class="announcement-ticker">
+    <div class="ticker-track">
+      <div class="ticker-item">⚡ <strong>UPCOMING:</strong> BITFLIP HACKATHON RELOADED</div>
+      <div class="ticker-item">🎙️ <strong>TECH TALKS:</strong> REAL INDUSTRY MENTORS, ZERO FORMALITIES</div>
+      <div class="ticker-item">💡 <strong>HAVE AN EVENT IDEA?</strong> DROP A NOTE IN THE FORM BELOW</div>
+      <!-- Duplicate -->
+      <div class="ticker-item">⚡ <strong>UPCOMING:</strong> BITFLIP HACKATHON RELOADED</div>
+      <div class="ticker-item">🎙️ <strong>TECH TALKS:</strong> REAL INDUSTRY MENTORS, ZERO FORMALITIES</div>
+      <div class="ticker-item">💡 <strong>HAVE AN EVENT IDEA?</strong> DROP A NOTE IN THE FORM BELOW</div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar-wrapper">
+    <nav class="site-navbar">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-box">
+          <img src="assets/images/tinkLogo.png" alt="TinkerHub CET Logo">
+        </div>
+        <div class="brand-text">Tinker<span>Hub</span> CET</div>
+      </a>
+      <button id="mobile-nav-toggle-btn" class="mobile-nav-toggle">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About & History</a></li>
+        <li><a href="events.html" class="nav-link active">Events</a></li>
+        <li><a href="projects.html" class="nav-link">Maker Kootam</a></li>
+        <li><a href="poster-lab.html" class="nav-link">Poster Lab</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="btn-icon-round">🌙</button>
+        <a href="https://tinyurl.com/tinkerhubcet" target="_blank" rel="noopener noreferrer" class="btn-fun btn-yellow">
+          Join Us ⚡
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Page Header -->
+  <header class="content-section" style="margin-top: 40px; margin-bottom: 20px;">
+    <span class="section-tag">Sessions & Sprints</span>
+    <h1 class="section-title">Events & Hackathons</h1>
+    <p class="section-subtitle">
+      Hands-on workshops, late-night code sprints, and candid sessions with engineers who actually work in the industry.
+    </p>
+  </header>
+
+  <!-- Filter Bar -->
+  <section class="content-section">
+    <div class="events-filter-bar">
+      <button class="filter-btn active" data-filter="all">All Events</button>
+      <button class="filter-btn" data-filter="hackathon">Hackathons</button>
+      <button class="filter-btn" data-filter="talk">Tech Talks</button>
+      <button class="filter-btn" data-filter="townhall">Townhalls</button>
+    </div>
+
+    <div class="events-grid">
+      <!-- BitFlip Hackathon -->
+      <article class="event-card reveal-on-scroll" data-category="hackathon">
+        <div class="event-card-header">
+          <span class="event-type-badge" style="background: rgba(255, 205, 16, 0.25);">Hackathon</span>
+          <span class="stamp stamp-teal" style="font-size: 0.65rem; padding: 2px 6px;">106 HACKERS</span>
+        </div>
+        <div class="event-date-row">
+          <span>📅 Oct 30 – Nov 16</span> · <span>DevFolio Platform</span>
+        </div>
+        <h3 class="event-card-title">BitFlip Hackathon</h3>
+        <p class="event-card-desc">
+          Flagship hackathon in collaboration with Devfolio featuring 12 national & global sponsors (Matic, Portis, Fold, Wolfram, JetBrains). 9 outstanding student submissions judged by CET alumni.
+        </p>
+        <div class="event-meta-footer">
+          <span class="event-speaker">Platform: Devfolio</span>
+          <span class="tech-pill">Cash Prizes</span>
+        </div>
+      </article>
+
+      <!-- Careers in Data Science -->
+      <article class="event-card reveal-on-scroll" data-category="talk">
+        <div class="event-card-header">
+          <span class="event-type-badge" style="background: rgba(5, 191, 206, 0.25);">Tech Talk</span>
+          <span class="stamp stamp-green" style="font-size: 0.65rem; padding: 2px 6px;">MICROSOFT GUEST</span>
+        </div>
+        <div class="event-date-row">
+          <span>📅 5 June · 7:00 PM</span> · <span>Google Meet</span>
+        </div>
+        <h3 class="event-card-title">Careers in Data Science</h3>
+        <p class="event-card-desc">
+          Damanpreet Kaur (Incoming Data Scientist at Microsoft) answered student questions on resume building, Kaggle competitions, and shifting from rote college theory to building production AI models.
+        </p>
+        <div class="event-meta-footer">
+          <span class="event-speaker">Guest: Damanpreet Kaur</span>
+          <span class="tech-pill">AI & ML</span>
+        </div>
+      </article>
+
+      <!-- Introduction to DevOps -->
+      <article class="event-card reveal-on-scroll" data-category="talk">
+        <div class="event-card-header">
+          <span class="event-type-badge" style="background: rgba(149, 191, 21, 0.25);">Hands-On</span>
+          <span class="stamp stamp-teal" style="font-size: 0.65rem; padding: 2px 6px;">ZERO TEARS</span>
+        </div>
+        <div class="event-date-row">
+          <span>📅 8 May · 6:00 PM</span> · <span>Discord Stage</span>
+        </div>
+        <h3 class="event-card-title">Introduction to DevOps</h3>
+        <p class="event-card-desc">
+          Sharath Cherian Thomas (Google Certified Cloud Engineer) demystified containerization, Dockerfiles, and Jenkins automation with student-relatable humor and zero corporate jargon.
+        </p>
+        <div class="event-meta-footer">
+          <span class="event-speaker">Guest: Sharath Thomas</span>
+          <span class="tech-pill">Cloud & Docker</span>
+        </div>
+      </article>
+
+      <!-- Blockchain in NEAR -->
+      <article class="event-card reveal-on-scroll" data-category="talk">
+        <div class="event-card-header">
+          <span class="event-type-badge" style="background: rgba(0, 96, 255, 0.2);">Web3</span>
+          <span class="stamp stamp-red" style="font-size: 0.65rem; padding: 2px 6px;">TOKEN GIVEAWAY</span>
+        </div>
+        <div class="event-date-row">
+          <span>📅 2 June · 7:00 PM</span> · <span>Google Meet</span>
+        </div>
+        <h3 class="event-card-title">Blockchain in NEAR</h3>
+        <p class="event-card-desc">
+          Gnana Lakshmi (Blockchain Crusader) unpacked how smart contracts, sharding, and consensus mechanisms work under the hood, followed by live interactive NEAR token giveaways.
+        </p>
+        <div class="event-meta-footer">
+          <span class="event-speaker">Guest: Gnana Lakshmi</span>
+          <span class="tech-pill">Web3</span>
+        </div>
+      </article>
+
+      <!-- TownHall CET -->
+      <article class="event-card reveal-on-scroll" data-category="townhall">
+        <div class="event-card-header">
+          <span class="event-type-badge" style="background: rgba(238, 23, 0, 0.15);">Townhall</span>
+          <span class="stamp stamp-teal" style="font-size: 0.65rem; padding: 2px 6px;">INTERN SPOTLIGHT</span>
+        </div>
+        <div class="event-date-row">
+          <span>📅 2 May · 7:00 PM</span> · <span>AirMeet</span>
+        </div>
+        <h3 class="event-card-title">TownHall CET: The ML Journey</h3>
+        <p class="event-card-desc">
+          CET's own Nandana Sreeraj on how lockdown self-learning led to an ML engineering internship at Purplle.com. Ended with breakout game tables and student mental health open mic.
+        </p>
+        <div class="event-meta-footer">
+          <span class="event-speaker">Guest: Nandana Sreeraj</span>
+          <span class="tech-pill">Community</span>
+        </div>
+      </article>
+
+      <!-- Drishti 2026 Re-Design Battle -->
+      <article class="event-card reveal-on-scroll" data-category="hackathon" style="border-color: var(--tinker-yellow); background: var(--bg-paper-dark);">
+        <div class="event-card-header">
+          <span class="event-type-badge" style="background: var(--tinker-yellow); color: var(--tinker-black);">Live Now</span>
+          <span class="stamp stamp-red" style="font-size: 0.65rem; padding: 2px 6px;">DRISHTI 2026</span>
+        </div>
+        <div class="event-date-row">
+          <span>📅 Right Now · 3h Limit</span> · <span>TinkerHub Arena</span>
+        </div>
+        <h3 class="event-card-title">Website Re-Design Battle</h3>
+        <p class="event-card-desc">
+          Rethinking TinkerHub CET on the web from scratch with bright colors, craft paper charm, draggable stickers, and genuine human student warmth.
+        </p>
+        <div class="event-meta-footer">
+          <span class="event-speaker">SoloGuy (Ajo Jose)</span>
+          <span class="tech-pill">Vanilla Magic</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Suggest an Event Interactive Note -->
+  <section class="content-section reveal-on-scroll" style="max-width: 680px;">
+    <div class="sticky-note">
+      💡 <strong>Want to host a session or hackathon?</strong><br>
+      You don't need permission from five different professors. If you learned something cool over the weekend—whether it's building a 3D renderer or wiring an ESP32—hit us up on Discord and we'll host a session together!
+    </div>
+  </section>
+
+  <!-- PRANK MODALS INCLUDE -->
+  <div id="prank-ktu-modal" class="prank-modal-overlay">
+    <div class="ktu-panic-box">
+      <div class="ktu-warning-stripes"></div>
+      <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--tinker-red); margin-bottom: 12px;">⚠️ KTU PORTAL ACADEMIC SHORTAGE ALERT</h3>
+      <p style="font-family: var(--font-typewriter); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+        Your attendance in <em>"Thermodynamics"</em> has plunged to <strong>41.2%</strong>.
+      </p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <button id="btn-bribe-dean" class="btn-fun btn-red">Bribe Dean with Canteen Samosa 🥟</button>
+        <button id="btn-run-mech" class="btn-fun btn-white">Flee to Mechanical Lab 🏃💨</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="prank-matrix-modal" class="prank-modal-overlay">
+    <div class="matrix-terminal-box">
+      <div class="terminal-header">
+        <span>root@tinkerhub-cet:~# /opt/scripts/bypass_ktu_grades.sh</span>
+        <button id="btn-matrix-close" style="background:none; border:none; color:#00FF66; font-family:monospace; font-size:1.2rem; cursor:pointer;">[X]</button>
+      </div>
+      <div id="matrix-terminal-stream" class="terminal-stream"></div>
+      <div style="text-align: right; margin-top: 12px;">
+        <button class="btn-fun btn-green" onclick="document.getElementById('btn-matrix-close').click();" style="font-size:0.8rem; padding: 4px 12px;">I Understand, I Will Study Now 🫡</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="rickroll-overlay" class="prank-modal-overlay">
+    <div class="retro-tv">
+      <button id="tv-close-btn" class="tv-close-btn">✕</button>
+      <div class="tv-screen"><img src="assets/images/rick.gif" alt="Rick Astley"></div>
+      <div class="rick-marquee">YOU'VE BEEN TINKER-ROLLED! 🕺</div>
+      <div class="rick-subtext">Rick Astley honors your curiosity! Now get back to coding!</div>
+      <button class="btn-fun btn-yellow" onclick="document.getElementById('tv-close-btn').click();">Back to TinkerHub 😎</button>
+    </div>
+  </div>
+
+  <button id="sound-toggle-btn" class="sound-toggle-btn" title="Toggle Sound FX">🔊</button>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <h4>TinkerHub CET</h4>
+          <p>The official student chapter at College of Engineering, Trivandrum.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Site Pages</h5>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About & History</a></li>
+            <li><a href="events.html">Events & Hackathons</a></li>
+            <li><a href="projects.html">Maker Kootam Projects</a></li>
+            <li><a href="poster-lab.html">Sudev Suresh Poster Lab</a></li>
+            <li><a href="team.html">Current Execom Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Connect Online</h5>
+          <ul class="footer-links-list">
+            <li><a href="https://instagram.com/tinkerhubcet" target="_blank" rel="noopener noreferrer">Instagram (@tinkerhubcet) ↗</a></li>
+            <li><a href="https://www.linkedin.com/company/74303785/" target="_blank" rel="noopener noreferrer">LinkedIn (TinkerHub CET) ↗</a></li>
+            <li><a href="mailto:tinkercet@gmail.com">tinkercet@gmail.com ✉️</a></li>
+            <li><a href="#" class="trigger-matrix-hack" style="color: var(--tinker-red);">Admin Master Key 🔑</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>Crafted with pure HTML, CSS & JavaScript for <strong>Drishti 2026</strong>.</div>
+        <div>Designed by <strong>SoloGuy (Ajo Jose)</strong></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -16,8 +16,19 @@
 </head>
 <body>
 
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress-bar" aria-hidden="true"></div>
+
   <!-- Background Notebook Red Margin Line -->
   <div class="notebook-margin-line" aria-hidden="true"></div>
+
+  <!-- Emergency Anti-Gravity Reset Banner (Hidden until Anti-Gravity prank triggered) -->
+  <div id="antigravity-reset-banner" style="display:none; position:fixed; top:10px; left:50%; transform:translateX(-50%); z-index:99999; background:var(--tinker-red); color:white; padding:12px 24px; border-radius:50px; border:3px solid white; box-shadow:0 8px 24px rgba(0,0,0,0.4); align-items:center; gap:16px; font-family:var(--font-display); font-weight:800;">
+    <span>🚨 WARNING: ANTIGRAVITY ENGINE OVERLOAD!</span>
+    <button id="btn-reset-gravity" class="btn-fun btn-yellow" style="padding:6px 14px; font-size:0.85rem;">
+      Fix Gravity Now 🧲
+    </button>
+  </div>
 
   <!-- Top Announcement Ticker -->
   <div class="announcement-ticker" aria-label="Community Announcement Ticker">
@@ -26,20 +37,20 @@
       <div class="ticker-item">⚡ <strong>NEXT UP:</strong> MAKER KOOTAM SESSIONS</div>
       <div class="ticker-item">🛠️ <strong>100% OPEN SOURCE:</strong> NO BLUE BOOK RECORD SHEETS ALLOWED</div>
       <div class="ticker-item">💡 <strong>TIP:</strong> DRAG ANY STICKER TO PERSONALIZE YOUR SCREEN</div>
-      <div class="ticker-item">🍕 <strong>FREE BIRYANI AT CANTEEN?</strong> CHECK THE HERO BUTTON</div>
-      <!-- Duplicate for seamless infinite loop -->
+      <div class="ticker-item">🥟 <strong>FREE SAMOSA IN CANTEEN?</strong> TAP THE BUTTON BELOW</div>
+      <!-- Duplicate for infinite seamless scroll -->
       <div class="ticker-item">🚀 <strong>DRISHTI 2026 x TINKERHUB CET</strong>: REBUILDING THE WEB ON PURPOSE</div>
       <div class="ticker-item">⚡ <strong>NEXT UP:</strong> MAKER KOOTAM SESSIONS</div>
       <div class="ticker-item">🛠️ <strong>100% OPEN SOURCE:</strong> NO BLUE BOOK RECORD SHEETS ALLOWED</div>
       <div class="ticker-item">💡 <strong>TIP:</strong> DRAG ANY STICKER TO PERSONALIZE YOUR SCREEN</div>
-      <div class="ticker-item">🍕 <strong>FREE BIRYANI AT CANTEEN?</strong> CHECK THE HERO BUTTON</div>
+      <div class="ticker-item">🥟 <strong>FREE SAMOSA IN CANTEEN?</strong> TAP THE BUTTON BELOW</div>
     </div>
   </div>
 
   <!-- Sticky Navbar with Official Logo Padding -->
   <div class="navbar-wrapper">
     <nav class="site-navbar" aria-label="Main Navigation">
-      <a href="#hero" class="nav-brand">
+      <a href="index.html" class="nav-brand">
         <div class="nav-logo-box" title="Official Logo with Handbook 10% Padding">
           <img src="assets/images/tinkLogo.png" alt="TinkerHub CET Logo">
         </div>
@@ -48,14 +59,15 @@
         </div>
       </a>
 
+      <button id="mobile-nav-toggle-btn" class="mobile-nav-toggle" aria-label="Toggle menu">☰</button>
+
       <ul class="nav-links">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#events" class="nav-link">Events</a></li>
-        <li><a href="#maker-kootam" class="nav-link">Maker Kootam</a></li>
-        <li><a href="#certificate" class="nav-link">Get Certified</a></li>
-        <li><a href="#status-lab" class="nav-link">Poster Lab</a></li>
-        <li><a href="#history" class="nav-link">History</a></li>
-        <li><a href="#team" class="nav-link">Team</a></li>
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="about.html" class="nav-link">About & History</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="projects.html" class="nav-link">Maker Kootam</a></li>
+        <li><a href="poster-lab.html" class="nav-link">Poster Lab</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -69,7 +81,7 @@
 
   <!-- HERO SECTION -->
   <header id="hero" class="hero-section">
-    <!-- Draggable Floating Stickers (Interactive fun inspired by nothingonpurpose + tinkerhub.org) -->
+    <!-- Draggable Floating Stickers -->
     <div class="sticker sticker-round" style="top: 15px; right: 48%; background: var(--tinker-yellow); transform: rotate(-8deg);">
       <span>0g</span>
       <span style="font-size:0.65rem; font-family:var(--font-typewriter);">FORMALITIES</span>
@@ -79,9 +91,10 @@
       ✨ drag me anywhere!
     </div>
 
-    <div class="sticker sticker-round rickroll-trap" data-rick-msg="WE WARNED YOU: DO NOT TOUCH! 🕺" style="bottom: 40px; left: 2%; background: var(--tinker-red); color: white; transform: rotate(15deg); cursor: pointer;" title="Don't touch this!">
+    <!-- Anti-Gravity Prank Trigger Sticker! -->
+    <div class="sticker sticker-round trigger-antigravity" style="bottom: 40px; left: 2%; background: var(--tinker-red); color: white; transform: rotate(15deg); cursor: pointer;" title="Warning: Do not tap!">
       <span style="font-size:1.1rem;">⚠️</span>
-      <span style="font-size:0.65rem;">DO NOT TAP</span>
+      <span style="font-size:0.62rem;">DO NOT TAP</span>
     </div>
 
     <div class="hero-grid">
@@ -110,11 +123,11 @@
           <a href="https://tinyurl.com/tinkerhubcet" target="_blank" rel="noopener noreferrer" class="btn-fun btn-teal">
             Join the Tribe 🚀
           </a>
-          <!-- Cheeky Rickroll Trap in the Hero! -->
-          <button class="btn-fun btn-white rickroll-trap" data-rick-msg="NEVER GONNA GIVE YOU FREE SAMOSAS! 🥟🕺" title="Warning: Suspiciously generous">
+          <!-- Prank 1 Trigger: KTU Attendance Panic! -->
+          <button class="btn-fun btn-white trigger-ktu-panic" title="Warning: Suspiciously generous">
             Claim Free Canteen Samosa Pass 🥟
           </button>
-          <a href="#certificate" class="btn-fun btn-yellow">
+          <a href="#certificate-section" class="btn-fun btn-yellow">
             Get Certified Tinkerer Pass ↓
           </a>
         </div>
@@ -173,7 +186,8 @@
           </div>
 
           <div style="text-align: center; margin: 16px 0;">
-            <div class="stamp stamp-red">
+            <!-- Prank 4 Trigger: Rickroll 2.0 Retro TV! -->
+            <div class="stamp stamp-red trigger-rickroll" style="cursor: pointer;" title="Click for secret stamp">
               <span>CERTIFIED TINKERER</span>
               <span style="font-size:0.65rem;">CET MAKER APPROVED</span>
             </div>
@@ -189,358 +203,35 @@
     </div>
   </header>
 
-  <!-- ABOUT SECTION -->
-  <section id="about" class="content-section">
-    <div class="section-header">
-      <span class="section-tag">Chapter Philosophy</span>
-      <h2 class="section-title">What even is TinkerHub CET?</h2>
-      <p class="section-subtitle">
-        We are a student-driven initiative on a mission to make sure no engineer graduates without ever building something real.
-      </p>
-    </div>
-
+  <!-- QUICK EXPLORE TILES -->
+  <section class="content-section reveal-on-scroll">
     <div class="about-grid">
-      <!-- Card 1: What We Do -->
       <div class="craft-card" style="transform: rotate(-0.5deg);">
         <div class="washi-tape washi-tape-left"></div>
-        <h3>💡 Outside the Curriculum</h3>
+        <h3>📚 Explore The Story & History</h3>
         <p>
-          Let's be real: college curriculum is great for learning how algorithms worked in 1982. But when you step outside into the real world, nobody asks you to write code on an A4 sheet with double margins.
+          Discover how TinkerHub CET grew from late-night virtual hackathons to an electric campus movement with our founding team, previous Execoms, and the 2021 Designers' Handbook.
         </p>
-        <p>
-          TinkerHub CET connects students across every single department—from First Years to Final Years, CS to Mechanical, Civil to Architecture—giving you hands-on exposure to modern open-source stacks, AI, cloud engineering, robotics, and design.
-        </p>
+        <a href="about.html" class="btn-fun btn-teal" style="font-size:0.85rem; padding: 6px 14px; margin-top: 10px;">
+          Read Our History & Archive 📖
+        </a>
       </div>
 
-      <!-- Card 2: The Peer-to-Peer Rule -->
       <div class="craft-card" style="transform: rotate(0.8deg);">
         <div class="washi-tape washi-tape-right"></div>
-        <h3>🤝 Zero Barriers. No Gatekeeping.</h3>
+        <h3>🛠️ Maker Kootam & Hackathons</h3>
         <p>
-          "A community for all, with absolutely no barriers to entry." That is our founding rule. You do not need to know what Docker or Git is before walking into our room.
+          From the 1st prize BitFlip winner <em>Webster-14</em> to assistive hardware devices for ALS patients, see the things CET engineers built when they stopped studying for series exams.
         </p>
-        <p>
-          If you are stuck on a bug at midnight, someone in the community has already cried over that exact same bug and will help you solve it. We learn together, fail fast, laugh about it, and rebuild.
-        </p>
-      </div>
-    </div>
-
-    <!-- CET Student Truths Sticky Note -->
-    <div style="max-width: 680px; margin: 40px auto 0;">
-      <div class="sticky-note">
-        📌 <strong>The CET Engineering Reality Check:</strong><br>
-        Class: <em>"Submit the 45-page assignment on bubble sort by 9:00 AM."</em><br>
-        TinkerHub CET: <em>"Hey, what if we built an IoT food-waste monitor for the hostel mess and deployed an AI model to predict our semester attendance?"</em>
+        <a href="projects.html" class="btn-fun btn-yellow" style="font-size:0.85rem; padding: 6px 14px; margin-top: 10px;">
+          Explore Community Projects 🚀
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- EVENTS & ACTIVITIES SECTION -->
-  <section id="events" class="content-section">
-    <div class="section-header">
-      <span class="section-tag">Activities & Sessions</span>
-      <h2 class="section-title">Things we conducted & survived</h2>
-      <p class="section-subtitle">
-        Real events, hackathons, and high-voltage technical sessions from our chapter archive.
-      </p>
-    </div>
-
-    <!-- Filter Buttons -->
-    <div class="events-filter-bar">
-      <button class="filter-btn active" data-filter="all">All Events</button>
-      <button class="filter-btn" data-filter="hackathon">Hackathons</button>
-      <button class="filter-btn" data-filter="talk">Tech Talks</button>
-      <button class="filter-btn" data-filter="townhall">Townhalls</button>
-    </div>
-
-    <div class="events-grid">
-      <!-- BitFlip Hackathon -->
-      <article class="event-card" data-category="hackathon">
-        <div class="event-card-header">
-          <span class="event-type-badge" style="background: rgba(255, 205, 16, 0.25);">Hackathon</span>
-          <span class="stamp stamp-teal" style="font-size: 0.65rem; padding: 2px 6px;">106 HACKERS</span>
-        </div>
-        <div class="event-date-row">
-          <span>📅 Oct 30 – Nov 16</span> · <span>DevFolio Platform</span>
-        </div>
-        <h3 class="event-card-title">BitFlip Hackathon</h3>
-        <p class="event-card-desc">
-          Flagship hackathon with 12 national & global sponsors including Devfolio, Matic, Portis, Fold, and Wolfram. 9 high-impact projects built by students evaluated by CET alumni jury.
-        </p>
-        <div class="event-meta-footer">
-          <span class="event-speaker">Platform: Devfolio</span>
-          <span class="tech-pill">Cash Prizes</span>
-        </div>
-      </article>
-
-      <!-- Careers in Data Science -->
-      <article class="event-card" data-category="talk">
-        <div class="event-card-header">
-          <span class="event-type-badge" style="background: rgba(5, 191, 206, 0.25);">Tech Talk</span>
-          <span class="stamp stamp-green" style="font-size: 0.65rem; padding: 2px 6px;">MICROSOFT GUEST</span>
-        </div>
-        <div class="event-date-row">
-          <span>📅 5 June · 7:00 PM</span> · <span>Google Meet</span>
-        </div>
-        <h3 class="event-card-title">Careers in Data Science</h3>
-        <p class="event-card-desc">
-          An energetic, candid Q&A session with Damanpreet Kaur (Incoming Data Scientist at Microsoft) sharing her inspiring roadmap from college fresher to Microsoft. Hosted by Nanda Kishor M Pai.
-        </p>
-        <div class="event-meta-footer">
-          <span class="event-speaker">Speaker: Damanpreet Kaur</span>
-          <span class="tech-pill">AI & ML</span>
-        </div>
-      </article>
-
-      <!-- Introduction to DevOps -->
-      <article class="event-card" data-category="talk">
-        <div class="event-card-header">
-          <span class="event-type-badge" style="background: rgba(149, 191, 21, 0.25);">Hands-On</span>
-          <span class="stamp stamp-teal" style="font-size: 0.65rem; padding: 2px 6px;">ZERO TEARS</span>
-        </div>
-        <div class="event-date-row">
-          <span>📅 8 May · 6:00 PM</span> · <span>Discord Stage</span>
-        </div>
-        <h3 class="event-card-title">Introduction to DevOps</h3>
-        <p class="event-card-desc">
-          Sharath Cherian Thomas (Google Certified Cloud Engineer) demystified Docker, CI/CD, and Jenkins with hilarious slides and practical starter repos for absolute beginners. Hosted by Vishnu Prakash.
-        </p>
-        <div class="event-meta-footer">
-          <span class="event-speaker">Speaker: Sharath Thomas</span>
-          <span class="tech-pill">Cloud & Docker</span>
-        </div>
-      </article>
-
-      <!-- Blockchain in NEAR -->
-      <article class="event-card" data-category="talk">
-        <div class="event-card-header">
-          <span class="event-type-badge" style="background: rgba(0, 96, 255, 0.2);">Web3</span>
-          <span class="stamp stamp-red" style="font-size: 0.65rem; padding: 2px 6px;">NEAR TOKEN DROP</span>
-        </div>
-        <div class="event-date-row">
-          <span>📅 2 June · 7:00 PM</span> · <span>Google Meet</span>
-        </div>
-        <h3 class="event-card-title">Blockchain in NEAR</h3>
-        <p class="event-card-desc">
-          Gnana Lakshmi (Blockchain Crusader) dove deep into sharding, crypto consensus, and scaling infrastructure, followed by live token giveaways to lucky attendee questions. Hosted by Atheena R.
-        </p>
-        <div class="event-meta-footer">
-          <span class="event-speaker">Speaker: Gnana Lakshmi</span>
-          <span class="tech-pill">Blockchain</span>
-        </div>
-      </article>
-
-      <!-- TownHall CET -->
-      <article class="event-card" data-category="townhall">
-        <div class="event-card-header">
-          <span class="event-type-badge" style="background: rgba(238, 23, 0, 0.15);">Townhall</span>
-          <span class="stamp stamp-teal" style="font-size: 0.65rem; padding: 2px 6px;">INTERN SPOTLIGHT</span>
-        </div>
-        <div class="event-date-row">
-          <span>📅 2 May · 7:00 PM</span> · <span>AirMeet</span>
-        </div>
-        <h3 class="event-card-title">TownHall CET: The ML Journey</h3>
-        <p class="event-card-desc">
-          Featuring CET's own Nandana Sreeraj on how lockdown self-learning led to a machine learning internship at Purplle.com. Ended with AirMeet networking and games. Hosted by Ankitha Jazy.
-        </p>
-        <div class="event-meta-footer">
-          <span class="event-speaker">Guest: Nandana Sreeraj</span>
-          <span class="tech-pill">Community</span>
-        </div>
-      </article>
-
-      <!-- Drishti Re-Design Challenge -->
-      <article class="event-card" data-category="hackathon" style="border-color: var(--tinker-yellow); background: var(--bg-paper-dark);">
-        <div class="event-card-header">
-          <span class="event-type-badge" style="background: var(--tinker-yellow); color: var(--tinker-black);">Live Now</span>
-          <span class="stamp stamp-red" style="font-size: 0.65rem; padding: 2px 6px;">DRISHTI 2026</span>
-        </div>
-        <div class="event-date-row">
-          <span>📅 Right Now · 3h Limit</span> · <span>TinkerHub Arena</span>
-        </div>
-        <h3 class="event-card-title">Website Re-Design Battle</h3>
-        <p class="event-card-desc">
-          Reimagining TinkerHub CET on the web from scratch with bright colors, zero corporate boredom, playful draggable stickers, and genuine human warmth.
-        </p>
-        <div class="event-meta-footer">
-          <span class="event-speaker">SoloGuy (Ajo Jose)</span>
-          <span class="tech-pill">Vanilla Magic</span>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- MAKER KOOTAM / PROJECTS SHOWCASE -->
-  <section id="maker-kootam" class="content-section">
-    <div class="section-header">
-      <span class="section-tag">Maker Kootam</span>
-      <h2 class="section-title">Projects Built by the Community</h2>
-      <p class="section-subtitle">
-        Real projects, hackathon winners, and assistive tech created by students at CET. Click upvote to cheer them on!
-      </p>
-    </div>
-
-    <div class="projects-grid">
-      <!-- Project 1: Webster-14 -->
-      <div class="project-card">
-        <div class="project-badge-top">🥇 1st Prize · BitFlip</div>
-        <h3 class="project-title">
-          Webster-14
-          <span style="font-size: 1.2rem;">🌐</span>
-        </h3>
-        <p class="project-desc">
-          Smart web automation and research browser interface built during BitFlip hackathon to aggregate developer resources seamlessly.
-        </p>
-        <div class="project-tech-pills">
-          <span class="tech-pill">JavaScript</span>
-          <span class="tech-pill">Devfolio</span>
-          <span class="tech-pill">Browser API</span>
-        </div>
-        <div class="project-card-actions">
-          <button class="upvote-btn" data-project-id="webster">
-            <span>▲ Upvote</span>
-            <span class="upvote-count">42</span>
-          </button>
-          <a href="https://devfolio.co/submissions/webster-14" target="_blank" rel="noopener noreferrer" class="btn-fun btn-white" style="font-size:0.8rem; padding: 4px 10px;">
-            Inspect Code ↗
-          </a>
-        </div>
-      </div>
-
-      <!-- Project 2: Decentralwood -->
-      <div class="project-card">
-        <div class="project-badge-top">🥈 2nd Prize · BitFlip</div>
-        <h3 class="project-title">
-          Decentralwood
-          <span style="font-size: 1.2rem;">🎬</span>
-        </h3>
-        <p class="project-desc">
-          Decentralized indie cinema and film financing platform allowing creators to distribute content directly without studio middlemen.
-        </p>
-        <div class="project-tech-pills">
-          <span class="tech-pill">Matic Network</span>
-          <span class="tech-pill">IPFS</span>
-          <span class="tech-pill">Smart Contracts</span>
-        </div>
-        <div class="project-card-actions">
-          <button class="upvote-btn" data-project-id="decentralwood">
-            <span>▲ Upvote</span>
-            <span class="upvote-count">38</span>
-          </button>
-          <a href="https://devfolio.co/submissions/decentralwood" target="_blank" rel="noopener noreferrer" class="btn-fun btn-white" style="font-size:0.8rem; padding: 4px 10px;">
-            Inspect Code ↗
-          </a>
-        </div>
-      </div>
-
-      <!-- Project 3: Heart Disease Predictor -->
-      <div class="project-card">
-        <div class="project-badge-top">🥉 3rd Prize · Data Pirates</div>
-        <h3 class="project-title">
-          Heart Disease Predictor
-          <span style="font-size: 1.2rem;">❤️</span>
-        </h3>
-        <p class="project-desc">
-          Machine learning diagnostic classifier trained on clinical cardiological data to provide early risk indicators with explainable metrics.
-        </p>
-        <div class="project-tech-pills">
-          <span class="tech-pill">Python</span>
-          <span class="tech-pill">Scikit-Learn</span>
-          <span class="tech-pill">Streamlit</span>
-        </div>
-        <div class="project-card-actions">
-          <button class="upvote-btn" data-project-id="heart-pred">
-            <span>▲ Upvote</span>
-            <span class="upvote-count">29</span>
-          </button>
-          <a href="https://devfolio.co/submissions/heart-disease-predictor-1" target="_blank" rel="noopener noreferrer" class="btn-fun btn-white" style="font-size:0.8rem; padding: 4px 10px;">
-            Inspect Code ↗
-          </a>
-        </div>
-      </div>
-
-      <!-- Project 4: ALS Caregiver Assistive Device -->
-      <div class="project-card">
-        <div class="project-badge-top" style="background: var(--tinker-teal); color: white;">🏆 ISQIP Winner</div>
-        <h3 class="project-title">
-          ALS Caregiver Device
-          <span style="font-size: 1.2rem;">🤝</span>
-        </h3>
-        <p class="project-desc">
-          Built by Abhishek, Rabeeh, Jacob & Alan over 2 intense days to provide a low-cost, ultra-reliable emergency alert system for patients diagnosed with ALS.
-        </p>
-        <div class="project-tech-pills">
-          <span class="tech-pill">Embedded IoT</span>
-          <span class="tech-pill">Hardware</span>
-          <span class="tech-pill">Assistive Tech</span>
-        </div>
-        <div class="project-card-actions">
-          <button class="upvote-btn" data-project-id="als-device">
-            <span>▲ Upvote</span>
-            <span class="upvote-count">56</span>
-          </button>
-          <button class="btn-fun btn-white" style="font-size:0.8rem; padding: 4px 10px;" onclick="alert('Built with pure heart and hardware soldering irons by CET students!')">
-            Read Story 📖
-          </button>
-        </div>
-      </div>
-
-      <!-- Project 5: Food Donor Link -->
-      <div class="project-card">
-        <div class="project-badge-top" style="background: var(--tinker-green);">🌿 Social Impact</div>
-        <h3 class="project-title">
-          Food Donor Link
-          <span style="font-size: 1.2rem;">🍲</span>
-        </h3>
-        <p class="project-desc">
-          Built by Vishnu, Abraham, Sreenivas & Adwaith to seamlessly connect wedding halls, caterers, and food distributors directly to local orphanages and shelters.
-        </p>
-        <div class="project-tech-pills">
-          <span class="tech-pill">Web Platform</span>
-          <span class="tech-pill">Logistics</span>
-          <span class="tech-pill">Community</span>
-        </div>
-        <div class="project-card-actions">
-          <button class="upvote-btn" data-project-id="food-donor">
-            <span>▲ Upvote</span>
-            <span class="upvote-count">48</span>
-          </button>
-          <button class="btn-fun btn-white" style="font-size:0.8rem; padding: 4px 10px;" onclick="alert('Eliminating food waste through direct student engineering.')">
-            Read Story 📖
-          </button>
-        </div>
-      </div>
-
-      <!-- Project 6: Cheeky Rickroll Trap Project! -->
-      <div class="project-card" style="border-color: var(--tinker-red);">
-        <div class="project-badge-top" style="background: var(--tinker-red); color: white;">🚨 TOP SECRET</div>
-        <h3 class="project-title">
-          KTU S-Grade Generator
-          <span style="font-size: 1.2rem;">🤫</span>
-        </h3>
-        <p class="project-desc">
-          Automated Python neural-network script that allegedly guarantees a 10.0 CGPA and bypasses internal exam vivas. 100% verified by senior hackers.
-        </p>
-        <div class="project-tech-pills">
-          <span class="tech-pill">Illegal Hacks</span>
-          <span class="tech-pill">Secret API</span>
-          <span class="tech-pill">Pure Black Magic</span>
-        </div>
-        <div class="project-card-actions">
-          <button class="upvote-btn" data-project-id="ktu-hack">
-            <span>▲ Upvote</span>
-            <span class="upvote-count">999</span>
-          </button>
-          <button class="btn-fun btn-red rickroll-trap" data-rick-msg="NEVER GONNA GIVE YOU A FREE S-GRADE! 🎓🕺" style="font-size:0.8rem; padding: 4px 12px;">
-            Download Script 🔓
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTERACTIVE CERTIFICATE OF CERTIFIED TINKERER (nothingonpurpose inspiration) -->
-  <section id="certificate" class="content-section">
+  <!-- INTERACTIVE CERTIFICATE GENERATOR (PRINT & PNG DOWNLOAD) -->
+  <section id="certificate-section" class="content-section reveal-on-scroll">
     <div class="cert-interactive-section">
       <div class="washi-tape washi-tape-top"></div>
       
@@ -548,7 +239,7 @@
         <span class="section-tag" style="background: var(--tinker-yellow); color: var(--tinker-black);">Official Proof</span>
         <h2 class="section-title">Certificate of Certified Tinkerer</h2>
         <p class="section-subtitle" style="margin: 0 auto;">
-          Just like nothingonpurpose sells certificates of nothing, you can generate your genuine, official, 100% valid TinkerHub CET Tinkerer Pass right here.
+          Just like nothingonpurpose sells certificates of nothing, you can generate your genuine, official, 100% valid TinkerHub CET Tinkerer Pass right here. Download as a PNG image or print directly!
         </p>
       </div>
 
@@ -586,143 +277,56 @@
             </select>
           </div>
 
-          <div style="display: flex; gap: 12px; margin-top: 10px;">
-            <button id="btn-stamp-cert" class="btn-fun btn-teal" style="flex: 1;">
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+            <button id="btn-stamp-cert" class="btn-fun btn-teal" style="flex: 1 1 100%;">
               Stamp Certificate! 🔨
             </button>
-            <button id="btn-print-cert" class="btn-fun btn-white" style="flex: 0.8;">
-              Print / Save 🖨️
+            <button id="btn-download-cert" class="btn-fun btn-yellow" style="flex: 1;">
+              Download PNG Image 🖼️
+            </button>
+            <button id="btn-print-cert" class="btn-fun btn-white" style="flex: 1;">
+              Print Certificate 🖨️
             </button>
           </div>
+          <small style="font-family: var(--font-typewriter); color: var(--ink-muted); text-align: center;">
+            *Printing will print ONLY your certificate, cleanly centered!
+          </small>
         </div>
 
-        <!-- Live Live Certificate Display -->
-        <div class="live-cert-preview" id="certificate-paper">
-          <div class="cert-ornament">❖ ❖ ❖ ❖ ❖ ❖ ❖</div>
-          <div style="font-family: var(--font-typewriter); font-size: 0.85rem; letter-spacing: 0.1em; color: var(--ink-muted);">
-            TINKERHUB FOUNDATION · CET CAMPUS CHAPTER
-          </div>
-          <h3 class="cert-header-title">Certificate of Tinkering</h3>
-          
-          <p style="font-family: var(--font-typewriter); font-size: 0.9rem; margin-top: 8px;">
-            This solemnly certifies that
-          </p>
-
-          <div class="cert-recipient-name" id="cert-preview-name">Ajo Jose</div>
-
-          <p class="cert-statement">
-            has been officially designated a <strong>Certified Tinkerer</strong> at the College of Engineering, Trivandrum. Guaranteed 0% bureaucracy, infinite curiosity, and licensed to build cool stuff.
-          </p>
-
-          <div id="cert-preview-role" style="font-family: var(--font-typewriter); font-size: 0.82rem; color: var(--tinker-teal); font-weight: bold; margin-bottom: 20px;">
-            Computer Science & Engineering · Fixes merge conflicts without crying
-          </div>
-
-          <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px dashed #1A1F20; padding-top: 12px;">
-            <div style="text-align: left; font-family: monospace; font-size: 0.72rem; color: #596568;">
-              SERIAL: <span id="cert-preview-serial">CET-TINKER-839210</span><br>
-              ISSUED: 19 SEPTEMBER 2026<br>
-              EXPIRES: NEVER
+        <!-- Printable Certificate Container (Targeted for isolated printing!) -->
+        <div id="printable-certificate-container">
+          <div class="live-cert-preview" id="certificate-paper">
+            <div class="cert-ornament">❖ ❖ ❖ ❖ ❖ ❖ ❖</div>
+            <div style="font-family: var(--font-typewriter); font-size: 0.85rem; letter-spacing: 0.1em; color: var(--ink-muted);">
+              TINKERHUB FOUNDATION · CET CAMPUS CHAPTER
             </div>
-
-            <div id="cert-preview-stamp" class="stamp stamp-red" style="font-size: 0.78rem; padding: 6px 12px; transform: rotate(-8deg);">
-              <span>TINKER APPROVED</span>
-              <span style="font-size: 0.6rem;">CET CHAPTER</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HANDBOOK-COMPLIANT POSTER & STATUS LAB -->
-  <section id="status-lab" class="content-section">
-    <div class="status-maker-section">
-      <div class="washi-tape washi-tape-left"></div>
-      
-      <div class="section-header">
-        <span class="section-tag" style="background: var(--tinker-teal); color: white;">Handbook Guidelines</span>
-        <h2 class="section-title">The Sudev Suresh Poster & Status Lab</h2>
-        <p class="section-subtitle">
-          In 2021, Design Lead Sudev Suresh Sreedevi wrote the official <em>Designers' Handbook</em> specifying exact color codes, checkerboard alternating themes, and 720×1280 status holders. Test it interactively below!
-        </p>
-      </div>
-
-      <div class="status-maker-grid">
-        <!-- Controls -->
-        <div class="status-controls">
-          <div class="form-group">
-            <label for="status-input-title">Event Title:</label>
-            <input type="text" id="status-input-title" class="form-input" value="Workshop on Modern Git & Open Source">
-          </div>
-
-          <div class="form-group">
-            <label for="status-input-speaker">Speaker / Guest:</label>
-            <input type="text" id="status-input-speaker" class="form-input" value="Linus Torvalds' Biggest Fan">
-          </div>
-
-          <div class="form-group">
-            <label for="status-input-type">Event Category (Handbook Checklist):</label>
-            <select id="status-input-type" class="form-select">
-              <option value="Workshop / Hands-on">Workshops, Seminars</option>
-              <option value="Tech Talk / Interview">Tech Talks, Interviews</option>
-              <option value="Congratulations / Achievement">Congratulating Achievers</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="status-theme-select">Checkerboard Theme (Handbook Spec):</label>
-            <select id="status-theme-select" class="form-select">
-              <option value="light">Light Theme (Base #FFFFFF, Text #1A1F20)</option>
-              <option value="dark">Dark Theme (Base #1A1F20, Text #FFFFFF)</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="status-accent-select">Brand Accent Color (Handbook Palette):</label>
-            <select id="status-accent-select" class="form-select">
-              <option value="#FFCD10">Tinker Yellow (#FFCD10)</option>
-              <option value="#205B67">Tinker Teal (#205B67)</option>
-              <option value="#95BF15">Tinker Green (#95BF15)</option>
-              <option value="#05BFCE">Tinker Cyan (#05BFCE)</option>
-              <option value="#EE1700">Tinker Red (#EE1700)</option>
-              <option value="#0060FF">Tinker Blue (#0060FF)</option>
-            </select>
-          </div>
-
-          <div style="margin-top: 14px; font-family: var(--font-friendly); font-size: 1.1rem; color: var(--ink-muted);">
-            💡 <em>Rule from Handbook Page 8:</em> Alternate between Light and Dark themes for consecutive posters to create an Instagram checkerboard aesthetic!
-          </div>
-        </div>
-
-        <!-- Live 720x1280 Status Holder Preview -->
-        <div style="text-align: center;">
-          <div id="status-preview-frame" class="handbook-status-frame light-spec">
-            <div id="status-inner-poster" class="status-inner-poster" style="border-color: #FFCD10;">
-              <!-- Official logo with 10% boundary padding -->
-              <div class="status-logo-header">
-                <img src="assets/images/tinkLogo.png" alt="TinkerHub Logo" class="status-logo-img">
-                <span id="status-poster-tag" style="font-family: var(--font-typewriter); font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; background: #FFCD10; color: #1A1F20; font-weight: bold;">
-                  WORKSHOP
-                </span>
-              </div>
-
-              <div>
-                <h4 id="status-poster-title" class="status-poster-title">Workshop on Modern Git & Open Source</h4>
-                <div id="status-poster-speaker" style="font-family: var(--font-friendly); font-size: 0.85rem; margin-top: 4px;">
-                  Speaker: Linus Torvalds' Biggest Fan
-                </div>
-              </div>
-
-              <div class="status-poster-meta">
-                <div>📅 Saturday · 7:00 PM</div>
-                <div>📍 Mechanical Seminar Hall / GMeet</div>
-                <div>🔗 tinyurl.com/tinkerhubcet</div>
-              </div>
-            </div>
+            <h3 class="cert-header-title">Certificate of Tinkering</h3>
             
-            <div style="margin-top: 14px; font-family: var(--font-typewriter); font-size: 0.68rem; opacity: 0.7;">
-              720 × 1280px Status Holder Preview (Handbook Fig 1)
+            <p style="font-family: var(--font-typewriter); font-size: 0.9rem; margin-top: 8px;">
+              This solemnly certifies that
+            </p>
+
+            <div class="cert-recipient-name" id="cert-preview-name">Ajo Jose</div>
+
+            <p class="cert-statement">
+              has been officially designated a <strong>Certified Tinkerer</strong> at the College of Engineering, Trivandrum. Guaranteed 0% bureaucracy, infinite curiosity, and licensed to build cool stuff.
+            </p>
+
+            <div id="cert-preview-role" style="font-family: var(--font-typewriter); font-size: 0.82rem; color: var(--tinker-teal); font-weight: bold; margin-bottom: 20px;">
+              Computer Science & Engineering · Fixes merge conflicts without crying
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px dashed #1A1F20; padding-top: 12px;">
+              <div style="text-align: left; font-family: monospace; font-size: 0.72rem; color: #596568;">
+                SERIAL: <span id="cert-preview-serial">CET-TINKER-839210</span><br>
+                ISSUED: 19 SEPTEMBER 2026<br>
+                EXPIRES: NEVER
+              </div>
+
+              <div id="cert-preview-stamp" class="stamp stamp-red" style="font-size: 0.78rem; padding: 6px 12px; transform: rotate(-8deg);">
+                <span>TINKER APPROVED</span>
+                <span style="font-size: 0.6rem;">CET CHAPTER</span>
+              </div>
             </div>
           </div>
         </div>
@@ -730,193 +334,70 @@
     </div>
   </section>
 
-  <!-- INTO THE HISTORY & ARCHIVE SECTION -->
-  <section id="history" class="content-section">
-    <div class="section-header">
-      <span class="section-tag">Archival Vault</span>
-      <h2 class="section-title">Into The History</h2>
-      <p class="section-subtitle">
-        Honouring the pioneers, leads, and hackers who laid the brickwork of TinkerHub CET. Real photos from the chapter records!
+  <!-- ==========================================
+       THE PRANK MODALS (4 UNIQUE PRANKS)
+       ========================================== -->
+
+  <!-- PRANK 1: KTU ATTENDANCE SHORTAGE PANIC MODAL -->
+  <div id="prank-ktu-modal" class="prank-modal-overlay" role="dialog" aria-modal="true">
+    <div class="ktu-panic-box">
+      <div class="ktu-warning-stripes"></div>
+      <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--tinker-red); margin-bottom: 12px;">
+        ⚠️ KTU PORTAL ACADEMIC SHORTAGE ALERT
+      </h3>
+      <p style="font-family: var(--font-typewriter); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+        <strong>CRITICAL WARNING:</strong> Your attendance in <em>"Mechanical Solid Thermodynamics"</em> has officially plunged to <strong>41.2%</strong>.<br><br>
+        The Dean of Academics requires an emergency medical certificate dated prior to 1947 or an immediate in-person explanation.
       </p>
-    </div>
-
-    <div class="history-scrapbook">
-      <!-- Nanda Kishor M Pai -->
-      <div class="polaroid-card">
-        <div class="washi-tape washi-tape-top"></div>
-        <div class="polaroid-img-wrapper">
-          <img src="assets/images/team.png" alt="TinkerHub CET Community">
-        </div>
-        <div class="polaroid-caption">Nanda Kishor M Pai</div>
-        <div class="polaroid-role">Founding Campus Lead</div>
-      </div>
-
-      <!-- Sudev Suresh Sreedevi -->
-      <div class="polaroid-card">
-        <div class="washi-tape washi-tape-top"></div>
-        <div class="polaroid-img-wrapper">
-          <img src="assets/images/sudev.jpg" alt="Sudev Suresh Sreedevi">
-        </div>
-        <div class="polaroid-caption">Sudev Suresh Sreedevi</div>
-        <div class="polaroid-role">Author of Designers' Handbook · Co-Chair</div>
-      </div>
-
-      <!-- Nandana Sreeraj -->
-      <div class="polaroid-card">
-        <div class="washi-tape washi-tape-top"></div>
-        <div class="polaroid-img-wrapper">
-          <img src="assets/images/nandanasree.jpg" alt="Nandana Sreeraj">
-        </div>
-        <div class="polaroid-caption">Nandana Sreeraj</div>
-        <div class="polaroid-role">ML Intern @ Purplle · Townhall Guest</div>
-      </div>
-
-      <!-- Vishnu Prakash -->
-      <div class="polaroid-card">
-        <div class="washi-tape washi-tape-top"></div>
-        <div class="polaroid-img-wrapper">
-          <img src="assets/images/vishnu.jpg" alt="Vishnu Prakash">
-        </div>
-        <div class="polaroid-caption">Vishnu Prakash</div>
-        <div class="polaroid-role">Ethereum India Fellow · Vice Chairperson</div>
-      </div>
-
-      <!-- BitFlip Hackathon Crew -->
-      <div class="polaroid-card">
-        <div class="washi-tape washi-tape-top"></div>
-        <div class="polaroid-img-wrapper">
-          <img src="assets/images/hackthon_1.jpg" alt="Hackathon Moments">
-        </div>
-        <div class="polaroid-caption">BitFlip Hackathon '20</div>
-        <div class="polaroid-role">Late nights, caffeine & 106 hackers</div>
-      </div>
-
-      <!-- Tech Sessions & Offline Meetups -->
-      <div class="polaroid-card">
-        <div class="washi-tape washi-tape-top"></div>
-        <div class="polaroid-img-wrapper">
-          <img src="assets/images/hackthon_2.jpg" alt="Offline Tinkering">
-        </div>
-        <div class="polaroid-caption">ISQIP Hackathon '21</div>
-        <div class="polaroid-role">1st Prize ALS device & Food donor team</div>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <button id="btn-bribe-dean" class="btn-fun btn-red">
+          Bribe Dean with Canteen Samosa 🥟
+        </button>
+        <button id="btn-run-mech" class="btn-fun btn-white">
+          Flee to Mechanical Lab 🏃💨
+        </button>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- CURRENT TEAM (2025–2026 Core with Fun Quirks & Rickrolls) -->
-  <section id="team" class="content-section">
-    <div class="section-header">
-      <span class="section-tag">The Current Crew</span>
-      <h2 class="section-title">Meet the Execom</h2>
-      <p class="section-subtitle">
-        The brave humans steering the ship this year. Tap any avatar for their secret superpower.
-      </p>
-    </div>
-
-    <div class="team-grid">
-      <!-- Member 1: Campus Lead -->
-      <div class="team-card">
-        <div class="team-avatar-box rickroll-trap" data-rick-msg="CAMPUS LEAD SECRET INVENTORY UNLOCKED! 🕺" title="Tap for secret">
-          👑
-        </div>
-        <div class="team-name">Campus Lead</div>
-        <div class="team-role">Chief Chaos Officer</div>
-        <div class="team-quirk">"I promised the faculty advisor this wouldn't catch fire. So far, 100% true."</div>
-        <div class="team-social-row">
-          <a href="https://github.com/AjoJosee" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub">🐙</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn">💼</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="Twitter">🐦</a>
-        </div>
+  <!-- PRANK 2: THE MATRIX HACKER CRT TERMINAL -->
+  <div id="prank-matrix-modal" class="prank-modal-overlay" role="dialog" aria-modal="true">
+    <div class="matrix-terminal-box">
+      <div class="terminal-header">
+        <span>root@tinkerhub-cet:~# /opt/scripts/bypass_ktu_grades.sh</span>
+        <button id="btn-matrix-close" style="background:none; border:none; color:#00FF66; font-family:monospace; font-size:1.2rem; cursor:pointer;">[X]</button>
       </div>
-
-      <!-- Member 2: Tech Lead -->
-      <div class="team-card">
-        <div class="team-avatar-box rickroll-trap" data-rick-msg="TECH LEAD MERGED TO MAIN WITHOUT PR! 🕺" title="Tap for secret">
-          💻
-        </div>
-        <div class="team-name">Tech Lead</div>
-        <div class="team-role">Senior Bug Generator</div>
-        <div class="team-quirk">"It worked on my machine, so technically the server is at fault."</div>
-        <div class="team-social-row">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub">🐙</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn">💼</a>
-        </div>
-      </div>
-
-      <!-- Member 3: Design Head -->
-      <div class="team-card">
-        <div class="team-avatar-box rickroll-trap" data-rick-msg="DESIGN HEAD SPOTTED ALIGNING PIXELS! 🕺" title="Tap for secret">
-          🎨
-        </div>
-        <div class="team-name">Design Head</div>
-        <div class="team-role">Figma Wizard</div>
-        <div class="team-quirk">"Obsessed with 10% logo padding and the sacred #FFCD10 Tinker Yellow."</div>
-        <div class="team-social-row">
-          <a href="https://instagram.com/tinkerhubcet" target="_blank" rel="noopener noreferrer" class="social-pill" title="Instagram">📸</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn">💼</a>
-        </div>
-      </div>
-
-      <!-- Member 4: WIT (Women in Tech) Lead -->
-      <div class="team-card">
-        <div class="team-avatar-box rickroll-trap" data-rick-msg="WIT LEAD LEVEL: MAXIMUM POWER! 🕺" title="Tap for secret">
-          ⚡
-        </div>
-        <div class="team-name">WIT Lead</div>
-        <div class="team-role">Community Catalyst</div>
-        <div class="team-quirk">"Empowering the next generation of women developers to ship real code."</div>
-        <div class="team-social-row">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub">🐙</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn">💼</a>
-        </div>
-      </div>
-
-      <!-- Member 5: Operations & Logistics -->
-      <div class="team-card">
-        <div class="team-avatar-box rickroll-trap" data-rick-msg="SEMINAR HALL PERMISSION SECURED! 🕺" title="Tap for secret">
-          📋
-        </div>
-        <div class="team-name">Operations Head</div>
-        <div class="team-role">Seminar Hall Negotiator</div>
-        <div class="team-quirk">"Knows exactly which department peon holds the spare projector HDMI cable."</div>
-        <div class="team-social-row">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn">💼</a>
-        </div>
-      </div>
-
-      <!-- Member 6: Content & Media Head -->
-      <div class="team-card">
-        <div class="team-avatar-box rickroll-trap" data-rick-msg="VIRAL INSTAGRAM REEL DROPPING NOW! 🕺" title="Tap for secret">
-          ✍️
-        </div>
-        <div class="team-name">Content Head</div>
-        <div class="team-role">Meme & Caption Alchemist</div>
-        <div class="team-quirk">"Turns technical Git tutorials into posts that even Civil engineers upvote."</div>
-        <div class="team-social-row">
-          <a href="https://instagram.com/tinkerhubcet" target="_blank" rel="noopener noreferrer" class="social-pill" title="Instagram">📸</a>
-          <a href="https://twitter.com/TinkerhubC" target="_blank" rel="noopener noreferrer" class="social-pill" title="Twitter">🐦</a>
-        </div>
+      <div id="matrix-terminal-stream" class="terminal-stream"></div>
+      <div style="text-align: right; margin-top: 12px;">
+        <button class="btn-fun btn-green" onclick="document.getElementById('btn-matrix-close').click();" style="font-size:0.8rem; padding: 4px 12px;">
+          I Understand, I Will Study Now 🫡
+        </button>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- RICKROLL MODAL OVERLAY (Retro TV Style) -->
-  <div id="rickroll-overlay" class="rickroll-overlay" role="dialog" aria-modal="true">
+  <!-- PRANK 4: RICKROLL 2.0 (RETRO TV WITH OFFLINE ANIMATED GIF) -->
+  <div id="rickroll-overlay" class="prank-modal-overlay" role="dialog" aria-modal="true">
     <div class="retro-tv">
       <button id="tv-close-btn" class="tv-close-btn" aria-label="Close Rickroll">✕</button>
       
       <div class="tv-screen">
-        <iframe id="tv-video-player" src="" title="Never Gonna Give You Up" allow="autoplay; encrypted-media"></iframe>
+        <img src="assets/images/rick.gif" alt="Rick Astley Dancing" loading="lazy">
       </div>
 
       <div class="rick-marquee">YOU'VE BEEN TINKER-ROLLED! 🕺</div>
       <div class="rick-subtext">
-        You were looking for a shortcut or free food, weren't you? Rick Astley honors your engineering curiosity. Always check production before clicking random buttons!
+        Were you hunting for an exam cheatcode or free food? Rick Astley honors your curiosity. In engineering, there are no shortcuts—only late nights, caffeine, and shipping real code!
       </div>
 
-      <button class="btn-fun btn-yellow" onclick="document.getElementById('tv-close-btn').click();">
-        I accept my fate and will now build something cool 😎
-      </button>
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <button class="btn-fun btn-yellow" onclick="document.getElementById('tv-close-btn').click();">
+          Back to TinkerHub 😎
+        </button>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="btn-fun btn-white">
+          Watch 4K Video on YouTube ↗
+        </a>
+      </div>
     </div>
   </div>
 
@@ -943,14 +424,14 @@
         </div>
 
         <div class="footer-col">
-          <h5>Navigate</h5>
+          <h5>Site Pages</h5>
           <ul class="footer-links-list">
-            <li><a href="#about">About TinkerHub</a></li>
-            <li><a href="#events">Activities & Hackathons</a></li>
-            <li><a href="#maker-kootam">Maker Kootam Projects</a></li>
-            <li><a href="#certificate">Get Certified Tinkerer Pass</a></li>
-            <li><a href="#status-lab">Handbook Poster Lab</a></li>
-            <li><a href="#history">Archival Vault</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About & History</a></li>
+            <li><a href="events.html">Events & Hackathons</a></li>
+            <li><a href="projects.html">Maker Kootam Projects</a></li>
+            <li><a href="poster-lab.html">Sudev Suresh Poster Lab</a></li>
+            <li><a href="team.html">Current Execom Team</a></li>
           </ul>
         </div>
 
@@ -962,8 +443,8 @@
             <li><a href="https://twitter.com/TinkerhubC" target="_blank" rel="noopener noreferrer">Twitter / X (@TinkerhubC) ↗</a></li>
             <li><a href="https://tinyurl.com/tinkerhubcet" target="_blank" rel="noopener noreferrer">Join Link (tinyurl) ↗</a></li>
             <li><a href="mailto:tinkercet@gmail.com">tinkercet@gmail.com ✉️</a></li>
-            <!-- Cheeky Secret Password link -->
-            <li><a href="#" class="rickroll-trap" data-rick-msg="ACCESS DENIED: ONLY RICK ASTLEY HAS THE PASSWORD! 🕺" style="color: var(--tinker-red);">Admin Master Key 🔑</a></li>
+            <!-- Prank 2 Trigger: Matrix Hacker Terminal! -->
+            <li><a href="#" class="trigger-matrix-hack" style="color: var(--tinker-red);">Admin Master Key 🔑</a></li>
           </ul>
         </div>
       </div>

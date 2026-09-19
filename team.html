@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FBF6E6">
+  <title>Meet the Execom · TinkerHub CET</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;700;800;900&family=Patrick+Hand&family=Space+Grotesk:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="assets/images/tinkLogo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="scroll-progress-bar" aria-hidden="true"></div>
+  <div class="notebook-margin-line" aria-hidden="true"></div>
+
+  <!-- Announcement Ticker -->
+  <div class="announcement-ticker">
+    <div class="ticker-track">
+      <div class="ticker-item">👑 <strong>THE 2025–2026 EXECOM:</strong> STEERING THE SHIP WITH ZERO SLEEP</div>
+      <div class="ticker-item">💡 <strong>SECRET POWERS:</strong> TAP ANY AVATAR FOR A SURPRISE EASTER EGG</div>
+      <div class="ticker-item">⚡ <strong>HACKATHONS, CODE & CHAI:</strong> REACH OUT TO ANY CORE MEMBER</div>
+      <!-- Duplicate -->
+      <div class="ticker-item">👑 <strong>THE 2025–2026 EXECOM:</strong> STEERING THE SHIP WITH ZERO SLEEP</div>
+      <div class="ticker-item">💡 <strong>SECRET POWERS:</strong> TAP ANY AVATAR FOR A SURPRISE EASTER EGG</div>
+      <div class="ticker-item">⚡ <strong>HACKATHONS, CODE & CHAI:</strong> REACH OUT TO ANY CORE MEMBER</div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar-wrapper">
+    <nav class="site-navbar">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-box">
+          <img src="assets/images/tinkLogo.png" alt="TinkerHub CET Logo">
+        </div>
+        <div class="brand-text">Tinker<span>Hub</span> CET</div>
+      </a>
+      <button id="mobile-nav-toggle-btn" class="mobile-nav-toggle">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About & History</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="projects.html" class="nav-link">Maker Kootam</a></li>
+        <li><a href="poster-lab.html" class="nav-link">Poster Lab</a></li>
+        <li><a href="team.html" class="nav-link active">Team</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="btn-icon-round">🌙</button>
+        <a href="https://tinyurl.com/tinkerhubcet" target="_blank" rel="noopener noreferrer" class="btn-fun btn-yellow">
+          Join Us ⚡
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Page Header -->
+  <header class="content-section" style="margin-top: 40px; margin-bottom: 20px;">
+    <span class="section-tag" style="background: var(--tinker-yellow); color: var(--tinker-black);">The Steering Crew</span>
+    <h1 class="section-title">Meet the Current Execom</h1>
+    <p class="section-subtitle">
+      The humans keeping the servers alive, the breadboards wired, and the community running. Tap their avatars to uncover their secret engineering superpowers!
+    </p>
+  </header>
+
+  <!-- Team Grid -->
+  <section class="content-section">
+    <div class="team-grid">
+      <!-- Member 1: Campus Lead (triggers KTU Panic prank) -->
+      <div class="team-card reveal-on-scroll">
+        <div class="team-avatar-box trigger-ktu-panic" title="Tap for Campus Lead secret!">
+          👑
+        </div>
+        <div class="team-name">Campus Lead</div>
+        <div class="team-role">Chief Chaos Officer</div>
+        <div class="team-quirk">"I promised the faculty advisor this wouldn't catch fire. So far, 100% true."</div>
+        <div class="team-social-row">
+          <a href="https://github.com/AjoJosee" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub">🐙</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn">💼</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="Twitter">🐦</a>
+        </div>
+      </div>
+
+      <!-- Member 2: Tech Lead (triggers Matrix Hack prank) -->
+      <div class="team-card reveal-on-scroll">
+        <div class="team-avatar-box trigger-matrix-hack" title="Tap for Tech Lead secret!">
+          💻
+        </div>
+        <div class="team-name">Tech Lead</div>
+        <div class="team-role">Senior Bug Generator</div>
+        <div class="team-quirk">"It worked on my machine, so technically the production server is at fault."</div>
+        <div class="team-social-row">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub">🐙</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn">💼</a>
+        </div>
+      </div>
+
+      <!-- Member 3: Design Head (triggers Anti-Gravity prank) -->
+      <div class="team-card reveal-on-scroll">
+        <div class="team-avatar-box trigger-antigravity" title="Tap for Design Head secret!">
+          🎨
+        </div>
+        <div class="team-name">Design Head</div>
+        <div class="team-role">Figma Wizard</div>
+        <div class="team-quirk">"Obsessed with 10% logo padding and the sacred #FFCD10 Tinker Yellow."</div>
+        <div class="team-social-row">
+          <a href="https://instagram.com/tinkerhubcet" target="_blank" rel="noopener noreferrer" class="social-pill" title="Instagram">📸</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn">💼</a>
+        </div>
+      </div>
+
+      <!-- Member 4: WIT Lead -->
+      <div class="team-card reveal-on-scroll">
+        <div class="team-avatar-box" onclick="sfx.playFanfare(); confetti.burst(event.clientX, event.clientY, 60);" title="Tap for victory!">
+          ⚡
+        </div>
+        <div class="team-name">WIT Lead</div>
+        <div class="team-role">Community Catalyst</div>
+        <div class="team-quirk">"Empowering women in engineering to build real software and lead hackathons."</div>
+        <div class="team-social-row">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub">🐙</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn">💼</a>
+        </div>
+      </div>
+
+      <!-- Member 5: Operations Head -->
+      <div class="team-card reveal-on-scroll">
+        <div class="team-avatar-box" onclick="sfx.playSqueak(); alert('🔑 Seminar Hall Key acquired!');" title="Tap to find key">
+          📋
+        </div>
+        <div class="team-name">Operations Head</div>
+        <div class="team-role">Seminar Hall Negotiator</div>
+        <div class="team-quirk">"Knows exactly which department peon holds the spare projector HDMI cable."</div>
+        <div class="team-social-row">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn">💼</a>
+        </div>
+      </div>
+
+      <!-- Member 6: Content & Media Head (triggers Rickroll) -->
+      <div class="team-card reveal-on-scroll">
+        <div class="team-avatar-box trigger-rickroll" title="Tap for viral reel!">
+          ✍️
+        </div>
+        <div class="team-name">Content Head</div>
+        <div class="team-role">Meme & Caption Alchemist</div>
+        <div class="team-quirk">"Turns technical Git tutorials into viral reels that even Civil engineers upvote."</div>
+        <div class="team-social-row">
+          <a href="https://instagram.com/tinkerhubcet" target="_blank" rel="noopener noreferrer" class="social-pill" title="Instagram">📸</a>
+          <a href="https://twitter.com/TinkerhubC" target="_blank" rel="noopener noreferrer" class="social-pill" title="Twitter">🐦</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRANK MODALS INCLUDE -->
+  <div id="prank-ktu-modal" class="prank-modal-overlay">
+    <div class="ktu-panic-box">
+      <div class="ktu-warning-stripes"></div>
+      <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--tinker-red); margin-bottom: 12px;">⚠️ KTU PORTAL ACADEMIC SHORTAGE ALERT</h3>
+      <p style="font-family: var(--font-typewriter); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+        Your attendance in <em>"Thermodynamics"</em> has plunged to <strong>41.2%</strong>.
+      </p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <button id="btn-bribe-dean" class="btn-fun btn-red">Bribe Dean with Canteen Samosa 🥟</button>
+        <button id="btn-run-mech" class="btn-fun btn-white">Flee to Mechanical Lab 🏃💨</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="prank-matrix-modal" class="prank-modal-overlay">
+    <div class="matrix-terminal-box">
+      <div class="terminal-header">
+        <span>root@tinkerhub-cet:~# /opt/scripts/bypass_ktu_grades.sh</span>
+        <button id="btn-matrix-close" style="background:none; border:none; color:#00FF66; font-family:monospace; font-size:1.2rem; cursor:pointer;">[X]</button>
+      </div>
+      <div id="matrix-terminal-stream" class="terminal-stream"></div>
+      <div style="text-align: right; margin-top: 12px;">
+        <button class="btn-fun btn-green" onclick="document.getElementById('btn-matrix-close').click();" style="font-size:0.8rem; padding: 4px 12px;">I Understand, I Will Study Now 🫡</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="rickroll-overlay" class="prank-modal-overlay">
+    <div class="retro-tv">
+      <button id="tv-close-btn" class="tv-close-btn">✕</button>
+      <div class="tv-screen"><img src="assets/images/rick.gif" alt="Rick Astley"></div>
+      <div class="rick-marquee">YOU'VE BEEN TINKER-ROLLED! 🕺</div>
+      <div class="rick-subtext">Rick Astley honors your curiosity! Now get back to coding!</div>
+      <button class="btn-fun btn-yellow" onclick="document.getElementById('tv-close-btn').click();">Back to TinkerHub 😎</button>
+    </div>
+  </div>
+
+  <button id="sound-toggle-btn" class="sound-toggle-btn" title="Toggle Sound FX">🔊</button>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <h4>TinkerHub CET</h4>
+          <p>The official student chapter at College of Engineering, Trivandrum.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Site Pages</h5>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About & History</a></li>
+            <li><a href="events.html">Events & Hackathons</a></li>
+            <li><a href="projects.html">Maker Kootam Projects</a></li>
+            <li><a href="poster-lab.html">Sudev Suresh Poster Lab</a></li>
+            <li><a href="team.html">Current Execom Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Connect Online</h5>
+          <ul class="footer-links-list">
+            <li><a href="https://instagram.com/tinkerhubcet" target="_blank" rel="noopener noreferrer">Instagram (@tinkerhubcet) ↗</a></li>
+            <li><a href="https://www.linkedin.com/company/74303785/" target="_blank" rel="noopener noreferrer">LinkedIn (TinkerHub CET) ↗</a></li>
+            <li><a href="mailto:tinkercet@gmail.com">tinkercet@gmail.com ✉️</a></li>
+            <li><a href="#" class="trigger-matrix-hack" style="color: var(--tinker-red);">Admin Master Key 🔑</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>Crafted with pure HTML, CSS & JavaScript for <strong>Drishti 2026</strong>.</div>
+        <div>Designed by <strong>SoloGuy (Ajo Jose)</strong></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

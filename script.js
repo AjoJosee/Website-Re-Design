@@ -1,10 +1,11 @@
 /**
  * TinkerHub CET - Revanced Edition
- * Interactive Engine: Audio, Physics, Draggable Stickers, Generators, Confetti & Rickrolls!
+ * Interactive Engine: Multi-Sound Synthesizer, Scroll Animations, Certificate PNG Downloader,
+ * Multi-Prank System (KTU Panic, Matrix Hack, Anti-Gravity, Rickroll 2.0), Draggable Stickers & Confetti
  */
 
 // ==========================================
-// 1. SOUND SYNTHESIZER (Web Audio API)
+// 1. EXTENDED SOUND SYNTHESIZER (Web Audio API)
 // ==========================================
 class SoundFX {
   constructor() {
@@ -31,19 +32,15 @@ class SoundFX {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
     const now = this.ctx.currentTime;
-
     osc.type = 'sine';
-    osc.frequency.setValueAtTime(450, now);
-    osc.frequency.exponentialRampToValueAtTime(850, now + 0.08);
-
-    gain.gain.setValueAtTime(0.3, now);
-    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
-
+    osc.frequency.setValueAtTime(400, now);
+    osc.frequency.exponentialRampToValueAtTime(800, now + 0.07);
+    gain.gain.setValueAtTime(0.25, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.07);
     osc.connect(gain);
     gain.connect(this.ctx.destination);
-
     osc.start(now);
-    osc.stop(now + 0.08);
+    osc.stop(now + 0.07);
   }
 
   playClick() {
@@ -53,17 +50,111 @@ class SoundFX {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
     const now = this.ctx.currentTime;
-
     osc.type = 'triangle';
-    osc.frequency.setValueAtTime(1200, now);
-    gain.gain.setValueAtTime(0.2, now);
-    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
-
+    osc.frequency.setValueAtTime(1300, now);
+    gain.gain.setValueAtTime(0.18, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.035);
     osc.connect(gain);
     gain.connect(this.ctx.destination);
-
     osc.start(now);
-    osc.stop(now + 0.04);
+    osc.stop(now + 0.035);
+  }
+
+  playBoing() {
+    if (!this.enabled) return;
+    this.init();
+    if (!this.ctx) return;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    const now = this.ctx.currentTime;
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(200, now);
+    osc.frequency.exponentialRampToValueAtTime(600, now + 0.12);
+    osc.frequency.exponentialRampToValueAtTime(250, now + 0.25);
+    gain.gain.setValueAtTime(0.3, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(now);
+    osc.stop(now + 0.25);
+  }
+
+  playSqueak() {
+    if (!this.enabled) return;
+    this.init();
+    if (!this.ctx) return;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    const now = this.ctx.currentTime;
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(900, now);
+    osc.frequency.linearRampToValueAtTime(1600, now + 0.08);
+    osc.frequency.linearRampToValueAtTime(1200, now + 0.16);
+    gain.gain.setValueAtTime(0.2, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.16);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(now);
+    osc.stop(now + 0.16);
+  }
+
+  playChaChing() {
+    if (!this.enabled) return;
+    this.init();
+    if (!this.ctx) return;
+    const now = this.ctx.currentTime;
+    // Two metallic bells in quick succession
+    [1046.50, 1318.51].forEach((freq, i) => {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      const start = now + (i * 0.09);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, start);
+      gain.gain.setValueAtTime(0.35, start);
+      gain.gain.exponentialRampToValueAtTime(0.001, start + 0.35);
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start(start);
+      osc.stop(start + 0.35);
+    });
+  }
+
+  playLaser() {
+    if (!this.enabled) return;
+    this.init();
+    if (!this.ctx) return;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    const now = this.ctx.currentTime;
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(1800, now);
+    osc.frequency.exponentialRampToValueAtTime(120, now + 0.18);
+    gain.gain.setValueAtTime(0.25, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.18);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(now);
+    osc.stop(now + 0.18);
+  }
+
+  playSiren() {
+    if (!this.enabled) return;
+    this.init();
+    if (!this.ctx) return;
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(600, now);
+    osc.frequency.linearRampToValueAtTime(1000, now + 0.2);
+    osc.frequency.linearRampToValueAtTime(600, now + 0.4);
+    osc.frequency.linearRampToValueAtTime(1000, now + 0.6);
+    gain.gain.setValueAtTime(0.2, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.7);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(now);
+    osc.stop(now + 0.7);
   }
 
   playStamp() {
@@ -73,42 +164,34 @@ class SoundFX {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
     const now = this.ctx.currentTime;
-
     osc.type = 'sawtooth';
-    osc.frequency.setValueAtTime(120, now);
-    osc.frequency.exponentialRampToValueAtTime(30, now + 0.18);
-
-    gain.gain.setValueAtTime(0.5, now);
-    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
-
+    osc.frequency.setValueAtTime(140, now);
+    osc.frequency.exponentialRampToValueAtTime(30, now + 0.22);
+    gain.gain.setValueAtTime(0.6, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.24);
     osc.connect(gain);
     gain.connect(this.ctx.destination);
-
     osc.start(now);
-    osc.stop(now + 0.2);
+    osc.stop(now + 0.24);
   }
 
   playFanfare() {
     if (!this.enabled) return;
     this.init();
     if (!this.ctx) return;
-    const notes = [523.25, 659.25, 783.99, 1046.50]; // C E G C
+    const notes = [523.25, 659.25, 783.99, 1046.50];
     notes.forEach((freq, i) => {
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
       const now = this.ctx.currentTime + (i * 0.08);
-
       osc.type = 'sine';
       osc.frequency.setValueAtTime(freq, now);
-
       gain.gain.setValueAtTime(0.25, now);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
-
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
       osc.connect(gain);
       gain.connect(this.ctx.destination);
-
       osc.start(now);
-      osc.stop(now + 0.2);
+      osc.stop(now + 0.22);
     });
   }
 
@@ -116,15 +199,15 @@ class SoundFX {
     if (!this.enabled) return;
     this.init();
     if (!this.ctx) return;
-    // Chiptune snippet: "Never gonna give you up"
+    // Chiptune 8-bit riff of "Never gonna give you up"
     const melody = [
-      { f: 392.00, d: 0.15 }, // G4
-      { f: 440.00, d: 0.15 }, // A4
-      { f: 523.25, d: 0.25 }, // C5
-      { f: 440.00, d: 0.2 },  // A4
-      { f: 659.25, d: 0.4 },  // E5
-      { f: 659.25, d: 0.3 },  // E5
-      { f: 587.33, d: 0.5 },  // D5
+      { f: 392.00, d: 0.14 }, // G4
+      { f: 440.00, d: 0.14 }, // A4
+      { f: 523.25, d: 0.22 }, // C5
+      { f: 440.00, d: 0.18 }, // A4
+      { f: 659.25, d: 0.36 }, // E5
+      { f: 659.25, d: 0.28 }, // E5
+      { f: 587.33, d: 0.45 }, // D5
     ];
     let time = this.ctx.currentTime + 0.05;
     melody.forEach(note => {
@@ -132,13 +215,13 @@ class SoundFX {
       const gain = this.ctx.createGain();
       osc.type = 'square';
       osc.frequency.setValueAtTime(note.f, time);
-      gain.gain.setValueAtTime(0.2, time);
+      gain.gain.setValueAtTime(0.18, time);
       gain.gain.exponentialRampToValueAtTime(0.01, time + note.d);
       osc.connect(gain);
       gain.connect(this.ctx.destination);
       osc.start(time);
       osc.stop(time + note.d);
-      time += note.d + 0.04;
+      time += note.d + 0.03;
     });
   }
 }
@@ -165,20 +248,20 @@ class ConfettiEngine {
     this.canvas.height = window.innerHeight;
   }
 
-  burst(x, y, count = 60) {
+  burst(x, y, count = 55) {
     if (!this.canvas) return;
     const originX = x || window.innerWidth / 2;
     const originY = y || window.innerHeight / 2;
 
     for (let i = 0; i < count; i++) {
       const angle = Math.random() * Math.PI * 2;
-      const speed = Math.random() * 12 + 4;
+      const speed = Math.random() * 11 + 4;
       this.particles.push({
         x: originX,
         y: originY,
         vx: Math.cos(angle) * speed,
-        vy: Math.sin(angle) * speed - 4,
-        size: Math.random() * 9 + 4,
+        vy: Math.sin(angle) * speed - 3.5,
+        size: Math.random() * 8 + 4,
         color: this.colors[Math.floor(Math.random() * this.colors.length)],
         rotation: Math.random() * 360,
         vr: (Math.random() - 0.5) * 16,
@@ -201,7 +284,7 @@ class ConfettiEngine {
       const p = this.particles[i];
       p.x += p.vx;
       p.y += p.vy;
-      p.vy += 0.35; // gravity
+      p.vy += 0.32;
       p.rotation += p.vr;
       p.life -= p.decay;
 
@@ -231,7 +314,41 @@ class ConfettiEngine {
 const confetti = new ConfettiEngine();
 
 // ==========================================
-// 3. DRAGGABLE STICKERS EVERYWHERE
+// 3. SCROLL PROGRESS & REVEAL ANIMATIONS
+// ==========================================
+function initScrollEngine() {
+  const progressBar = document.getElementById('scroll-progress-bar');
+  const reveals = document.querySelectorAll('.reveal-on-scroll');
+
+  // Scroll Progress Bar Update
+  window.addEventListener('scroll', () => {
+    if (progressBar) {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      progressBar.style.width = scrolled + '%';
+    }
+  }, { passive: true });
+
+  // IntersectionObserver for staggered reveals
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => observer.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('in-view'));
+  }
+}
+
+// ==========================================
+// 4. DRAGGABLE STICKERS WITH SOUNDS
 // ==========================================
 function initDraggableStickers() {
   const stickers = document.querySelectorAll('.sticker');
@@ -243,7 +360,7 @@ function initDraggableStickers() {
     sticker.addEventListener('pointerdown', (e) => {
       isDragging = true;
       sticker.setPointerCapture(e.pointerId);
-      sfx.playPop();
+      sfx.playBoing();
 
       const rect = sticker.getBoundingClientRect();
       startX = e.clientX;
@@ -279,7 +396,7 @@ function initDraggableStickers() {
 }
 
 // ==========================================
-// 4. INTERACTIVE CERTIFICATE OF CERTIFIED TINKERER
+// 5. CERTIFICATE GENERATOR (PRINT & PNG DOWNLOAD)
 // ==========================================
 function initCertificateGenerator() {
   const nameInput = document.getElementById('cert-input-name');
@@ -287,6 +404,7 @@ function initCertificateGenerator() {
   const superpowerSelect = document.getElementById('cert-input-superpower');
   const stampBtn = document.getElementById('btn-stamp-cert');
   const printBtn = document.getElementById('btn-print-cert');
+  const downloadBtn = document.getElementById('btn-download-cert');
 
   const displayName = document.getElementById('cert-preview-name');
   const displayRole = document.getElementById('cert-preview-role');
@@ -332,16 +450,297 @@ function initCertificateGenerator() {
     confetti.burst(rect.left + rect.width / 2, rect.top + rect.height / 2, 70);
   });
 
+  // Isolated Print Dialog: ONLY prints the certificate!
   if (printBtn) {
     printBtn.addEventListener('click', () => {
       sfx.playPop();
       window.print();
     });
   }
+
+  // Direct PNG Image Download using Canvas
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', () => {
+      sfx.playChaChing();
+      downloadCertificatePNG();
+    });
+  }
+}
+
+// Generate real downloadable PNG for the certificate
+function downloadCertificatePNG() {
+  const name = document.getElementById('cert-preview-name').textContent;
+  const role = document.getElementById('cert-preview-role').textContent;
+  const serial = document.getElementById('cert-preview-serial').textContent;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = 1200;
+  canvas.height = 800;
+  const ctx = canvas.getContext('2d');
+
+  // Background Paper
+  ctx.fillStyle = '#FFFDF4';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Distressed Double Border
+  ctx.strokeStyle = '#1A1F20';
+  ctx.lineWidth = 12;
+  ctx.strokeRect(30, 30, canvas.width - 60, canvas.height - 60);
+  ctx.lineWidth = 4;
+  ctx.strokeRect(48, 48, canvas.width - 96, canvas.height - 96);
+
+  // Ornaments & Header
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#205B67';
+  ctx.font = 'bold 24px monospace';
+  ctx.fillText('❖ ❖ ❖ ❖ ❖ ❖ ❖ ❖ ❖ ❖ ❖ ❖', canvas.width / 2, 95);
+
+  ctx.fillStyle = '#596568';
+  ctx.font = 'bold 20px monospace';
+  ctx.fillText('TINKERHUB FOUNDATION · CET CAMPUS CHAPTER', canvas.width / 2, 140);
+
+  ctx.fillStyle = '#1A1F20';
+  ctx.font = '900 48px sans-serif';
+  ctx.fillText('CERTIFICATE OF TINKERING', canvas.width / 2, 210);
+
+  ctx.fillStyle = '#596568';
+  ctx.font = '22px monospace';
+  ctx.fillText('This solemnly certifies that', canvas.width / 2, 275);
+
+  // Recipient Name
+  ctx.fillStyle = '#205B67';
+  ctx.font = 'bold 64px cursive, sans-serif';
+  ctx.fillText(name, canvas.width / 2, 360);
+
+  // Underline
+  ctx.strokeStyle = '#1A1F20';
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(canvas.width / 2 - 250, 385);
+  ctx.lineTo(canvas.width / 2 + 250, 385);
+  ctx.stroke();
+
+  // Statement
+  ctx.fillStyle = '#1A1F20';
+  ctx.font = '22px monospace';
+  ctx.fillText('has been officially designated a Certified Tinkerer at the', canvas.width / 2, 440);
+  ctx.fillText('College of Engineering, Trivandrum.', canvas.width / 2, 475);
+  ctx.fillText('Guaranteed 0% bureaucracy, infinite curiosity, and licensed to build.', canvas.width / 2, 510);
+
+  // Role
+  ctx.fillStyle = '#95BF15';
+  ctx.font = 'bold 24px monospace';
+  ctx.fillText(role, canvas.width / 2, 570);
+
+  // Bottom Metadata
+  ctx.textAlign = 'left';
+  ctx.fillStyle = '#596568';
+  ctx.font = '18px monospace';
+  ctx.fillText(`SERIAL: ${serial}`, 80, 710);
+  ctx.fillText('ISSUED: 19 SEPTEMBER 2026 · EXPIRES: NEVER', 80, 735);
+
+  // Red Stamp (TINKER APPROVED)
+  ctx.save();
+  ctx.translate(canvas.width - 240, 680);
+  ctx.rotate(-0.12);
+  ctx.strokeStyle = '#EE1700';
+  ctx.fillStyle = '#EE1700';
+  ctx.lineWidth = 4;
+  ctx.strokeRect(-120, -50, 240, 80);
+  ctx.textAlign = 'center';
+  ctx.font = 'bold 24px monospace';
+  ctx.fillText('TINKER APPROVED', 0, -10);
+  ctx.font = 'bold 16px monospace';
+  ctx.fillText('CET CHAPTER', 0, 18);
+  ctx.restore();
+
+  // Trigger download
+  const link = document.createElement('a');
+  link.download = `Certified-Tinkerer-${name.replace(/\s+/g, '-')}.png`;
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+  confetti.burst(window.innerWidth / 2, window.innerHeight / 2, 80);
 }
 
 // ==========================================
-// 5. HANDBOOK-COMPLIANT POSTER / STATUS MAKER
+// 6. MULTI-PRANK ENGINE: 4 UNIQUE PRANKS
+// ==========================================
+function initPrankEngine() {
+  // Prank 1: KTU Attendance Shortage Panic
+  const ktuTriggers = document.querySelectorAll('.trigger-ktu-panic');
+  const ktuModal = document.getElementById('prank-ktu-modal');
+  const btnBribe = document.getElementById('btn-bribe-dean');
+  const btnRunMech = document.getElementById('btn-run-mech');
+
+  ktuTriggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      sfx.playSiren();
+      if (ktuModal) ktuModal.classList.add('active');
+    });
+  });
+
+  if (btnBribe) {
+    btnBribe.addEventListener('click', () => {
+      sfx.playSqueak();
+      alert('🥟 BRIBE REJECTED!\n\nThe Dean is on a low-carb diet. Attendance shortage remains at 41.2%.\nPlease report to Mechanical Workshop at 8:30 AM tomorrow!');
+      if (ktuModal) ktuModal.classList.remove('active');
+    });
+  }
+
+  if (btnRunMech) {
+    btnRunMech.addEventListener('click', () => {
+      sfx.playLaser();
+      if (ktuModal) ktuModal.classList.remove('active');
+      confetti.burst(window.innerWidth / 2, window.innerHeight / 2, 40);
+    });
+  }
+
+  // Prank 2: The CRT Matrix Hacker Terminal
+  const matrixTriggers = document.querySelectorAll('.trigger-matrix-hack');
+  const matrixModal = document.getElementById('prank-matrix-modal');
+  const matrixStream = document.getElementById('matrix-terminal-stream');
+  const matrixClose = document.getElementById('btn-matrix-close');
+
+  matrixTriggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      sfx.playLaser();
+      if (matrixModal) {
+        matrixModal.classList.add('active');
+        runMatrixStream(matrixStream);
+      }
+    });
+  });
+
+  if (matrixClose) {
+    matrixClose.addEventListener('click', () => {
+      sfx.playClick();
+      if (matrixModal) matrixModal.classList.remove('active');
+    });
+  }
+
+  // Prank 3: Anti-Gravity Chaos Mode
+  const antiGravityTriggers = document.querySelectorAll('.trigger-antigravity');
+  const antiGravityBanner = document.getElementById('antigravity-reset-banner');
+  const btnResetGravity = document.getElementById('btn-reset-gravity');
+
+  antiGravityTriggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      sfx.playSiren();
+      document.body.classList.add('chaos-mode');
+      if (antiGravityBanner) antiGravityBanner.style.display = 'flex';
+      confetti.burst(window.innerWidth / 2, window.innerHeight / 2, 90);
+    });
+  });
+
+  if (btnResetGravity) {
+    btnResetGravity.addEventListener('click', () => {
+      sfx.playFanfare();
+      document.body.classList.remove('chaos-mode');
+      if (antiGravityBanner) antiGravityBanner.style.display = 'none';
+      confetti.burst(window.innerWidth / 2, window.innerHeight / 2, 60);
+    });
+  }
+
+  // Prank 4: Rickroll 2.0 (Retro TV with animated GIF)
+  const rickTriggers = document.querySelectorAll('.trigger-rickroll');
+  const rickModal = document.getElementById('rickroll-overlay');
+  const rickClose = document.getElementById('tv-close-btn');
+
+  rickTriggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      sfx.playRickTune();
+      if (rickModal) rickModal.classList.add('active');
+      confetti.burst(window.innerWidth / 2, window.innerHeight / 2, 80);
+    });
+  });
+
+  if (rickClose) {
+    rickClose.addEventListener('click', () => {
+      sfx.playClick();
+      if (rickModal) rickModal.classList.remove('active');
+    });
+  }
+
+  // Close modals when clicking backdrop
+  document.querySelectorAll('.prank-modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+      }
+    });
+  });
+}
+
+function runMatrixStream(container) {
+  if (!container) return;
+  container.textContent = '';
+  const lines = [
+    '[INIT] Connecting to KTU Exam Database via student WiFi...',
+    '[AUTH] Bypassing firewall using password: "admin1234"... SUCCESS.',
+    '[SCAN] Locating tomorrow\'s Series Exam question paper...',
+    '[EXTRACT] Decrypting Question 1: "State the difference between writing code and daydreaming about code."',
+    '[EXTRACT] Decrypting Question 2: "Explain why CSS centering took 3 hours yesterday."',
+    '[OVERWRITE] Injecting S-Grade CGPA for all TinkerHub CET members...',
+    '[ERROR] KTU Server ran out of memory (4MB RAM detected).',
+    '[CONCLUSION] There are no shortcuts, friend! But join TinkerHub CET and you will actually know how to build the whole system from scratch.',
+    '>>> EXPLOIT COMPLETED. HAVE A NICE DAY! ⚡'
+  ];
+
+  let i = 0;
+  function addLine() {
+    if (i < lines.length) {
+      container.textContent += lines[i] + '\n\n';
+      container.scrollTop = container.scrollHeight;
+      sfx.playClick();
+      i++;
+      setTimeout(addLine, 350);
+    }
+  }
+  addLine();
+}
+
+// ==========================================
+// 7. PROJECT UPVOTE PERSISTENCE
+// ==========================================
+function initProjectUpvotes() {
+  const upvoteBtns = document.querySelectorAll('.upvote-btn');
+
+  upvoteBtns.forEach(btn => {
+    const id = btn.dataset.projectId;
+    const countSpan = btn.querySelector('.upvote-count');
+    const stored = localStorage.getItem(`tinker_upvote_${id}`);
+
+    if (stored && countSpan) {
+      countSpan.textContent = stored;
+      btn.classList.add('upvoted');
+    }
+
+    btn.addEventListener('click', () => {
+      sfx.playPop();
+      let count = parseInt(countSpan.textContent, 10) || 0;
+      if (btn.classList.contains('upvoted')) {
+        count = Math.max(0, count - 1);
+        btn.classList.remove('upvoted');
+        localStorage.removeItem(`tinker_upvote_${id}`);
+      } else {
+        count++;
+        btn.classList.add('upvoted');
+        localStorage.setItem(`tinker_upvote_${id}`, count);
+        sfx.playFanfare();
+        const rect = btn.getBoundingClientRect();
+        confetti.burst(rect.left + rect.width / 2, rect.top + rect.height / 2, 45);
+      }
+      countSpan.textContent = count;
+    });
+  });
+}
+
+// ==========================================
+// 8. HANDBOOK STATUS MAKER
 // ==========================================
 function initStatusMaker() {
   const titleInput = document.getElementById('status-input-title');
@@ -364,20 +763,21 @@ function initStatusMaker() {
     if (posterTag) posterTag.textContent = typeSelect.value;
 
     // Checkerboard Alternation: Light Theme vs Dark Theme
-    if (themeToggle.value === 'dark') {
+    if (themeToggle && themeToggle.value === 'dark') {
       frame.classList.remove('light-spec');
       frame.classList.add('dark-spec');
-    } else {
+    } else if (themeToggle) {
       frame.classList.remove('dark-spec');
       frame.classList.add('light-spec');
     }
 
-    // Apply handbook accent color
-    const accent = colorSelect.value;
-    innerPoster.style.borderColor = accent;
-    if (posterTag) {
-      posterTag.style.backgroundColor = accent;
-      posterTag.style.color = (accent === '#FFCD10' || accent === '#95BF15' || accent === '#05BFCE') ? '#1A1F20' : '#FFFFFF';
+    if (colorSelect && innerPoster) {
+      const accent = colorSelect.value;
+      innerPoster.style.borderColor = accent;
+      if (posterTag) {
+        posterTag.style.backgroundColor = accent;
+        posterTag.style.color = (accent === '#FFCD10' || accent === '#95BF15' || accent === '#05BFCE') ? '#1A1F20' : '#FFFFFF';
+      }
     }
   }
 
@@ -398,143 +798,15 @@ function initStatusMaker() {
 }
 
 // ==========================================
-// 6. PROJECTS UPVOTE ENGINE (Stored in LocalStorage)
-// ==========================================
-function initProjectUpvotes() {
-  const upvoteBtns = document.querySelectorAll('.upvote-btn');
-
-  upvoteBtns.forEach(btn => {
-    const id = btn.dataset.projectId;
-    const countSpan = btn.querySelector('.upvote-count');
-    const stored = localStorage.getItem(`tinker_upvote_${id}`);
-
-    if (stored) {
-      countSpan.textContent = stored;
-      btn.classList.add('upvoted');
-    }
-
-    btn.addEventListener('click', (e) => {
-      sfx.playPop();
-      let count = parseInt(countSpan.textContent, 10) || 0;
-      if (btn.classList.contains('upvoted')) {
-        count = Math.max(0, count - 1);
-        btn.classList.remove('upvoted');
-        localStorage.removeItem(`tinker_upvote_${id}`);
-      } else {
-        count++;
-        btn.classList.add('upvoted');
-        localStorage.setItem(`tinker_upvote_${id}`, count);
-        sfx.playFanfare();
-        const rect = btn.getBoundingClientRect();
-        confetti.burst(rect.left + rect.width / 2, rect.top + rect.height / 2, 45);
-      }
-      countSpan.textContent = count;
-    });
-  });
-}
-
-// ==========================================
-// 7. EVENTS FILTER TABS
-// ==========================================
-function initEventsFilter() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const eventCards = document.querySelectorAll('.event-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      sfx.playClick();
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.dataset.filter;
-      eventCards.forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.style.display = 'flex';
-          card.style.animation = 'fadeIn 0.3s ease';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-}
-
-// ==========================================
-// 8. RICKROLL & EASTER EGG ENGINE 🕺
-// ==========================================
-function initRickrollTraps() {
-  const overlay = document.getElementById('rickroll-overlay');
-  const closeBtn = document.getElementById('tv-close-btn');
-  const traps = document.querySelectorAll('.rickroll-trap');
-  const tvIframe = document.getElementById('tv-video-player');
-
-  if (!overlay) return;
-
-  function triggerRickroll(customMsg) {
-    sfx.playRickTune();
-    const titleEl = overlay.querySelector('.rick-marquee');
-    if (titleEl && customMsg) {
-      titleEl.textContent = customMsg;
-    }
-    overlay.classList.add('active');
-    confetti.burst(window.innerWidth / 2, window.innerHeight / 2, 100);
-
-    // Auto load embed if iframe exists
-    if (tvIframe && !tvIframe.src.includes('dQw4w9WgXcQ')) {
-      tvIframe.src = "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1&controls=1";
-    }
-  }
-
-  traps.forEach(trap => {
-    trap.addEventListener('click', (e) => {
-      e.preventDefault();
-      const msg = trap.dataset.rickMsg || "YOU'VE BEEN TINKER-ROLLED! 🕺";
-      triggerRickroll(msg);
-    });
-  });
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      sfx.playClick();
-      overlay.classList.remove('active');
-      if (tvIframe) {
-        tvIframe.src = "";
-      }
-    });
-  }
-
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) {
-      overlay.classList.remove('active');
-      if (tvIframe) tvIframe.src = "";
-    }
-  });
-
-  // Konami Code Easter Egg (Up Up Down Down Left Right Left Right B A)
-  const konamiSequence = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-  let konamiIndex = 0;
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key.toLowerCase() === konamiSequence[konamiIndex].toLowerCase()) {
-      konamiIndex++;
-      if (konamiIndex === konamiSequence.length) {
-        triggerRickroll("SECRET EXPLICIT KONAMI CODE TINKER-ROLL! 🎮");
-        konamiIndex = 0;
-      }
-    } else {
-      konamiIndex = 0;
-    }
-  });
-}
-
-// ==========================================
-// 9. THEME & SOUND CONTROLS
+// 9. THEME, AUDIO & MOBILE NAV
 // ==========================================
 function initThemeAndAudioControls() {
   const themeToggle = document.getElementById('theme-toggle-btn');
   const soundToggle = document.getElementById('sound-toggle-btn');
+  const mobileNavBtn = document.getElementById('mobile-nav-toggle-btn');
+  const navLinks = document.querySelector('.nav-links');
 
-  // Theme Toggle
+  // Theme Switcher
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       sfx.playPop();
@@ -554,20 +826,28 @@ function initThemeAndAudioControls() {
       soundToggle.title = sfx.enabled ? 'Mute Sounds' : 'Unmute Sounds';
     });
   }
+
+  // Mobile Nav Drawer Toggle
+  if (mobileNavBtn && navLinks) {
+    mobileNavBtn.addEventListener('click', () => {
+      sfx.playClick();
+      navLinks.classList.toggle('open');
+    });
+  }
 }
 
 // ==========================================
 // 10. BOOTSTRAP ON LOAD
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
+  initScrollEngine();
   initDraggableStickers();
   initCertificateGenerator();
   initStatusMaker();
   initProjectUpvotes();
-  initEventsFilter();
-  initRickrollTraps();
+  initPrankEngine();
   initThemeAndAudioControls();
 
-  // Play initial chime on first user click
+  // Resume Web Audio on first user interaction
   window.addEventListener('click', () => sfx.init(), { once: true });
 });

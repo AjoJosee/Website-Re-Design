@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FBF6E6">
+  <title>About & History · TinkerHub CET</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;700;800;900&family=Patrick+Hand&family=Space+Grotesk:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="assets/images/tinkLogo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="scroll-progress-bar" aria-hidden="true"></div>
+  <div class="notebook-margin-line" aria-hidden="true"></div>
+
+  <!-- Announcement Ticker -->
+  <div class="announcement-ticker">
+    <div class="ticker-track">
+      <div class="ticker-item">📖 <strong>THE STORY OF TINKERHUB CET</strong>: FOUNDED TO DESTROY BLUE-BOOK FORMALITIES</div>
+      <div class="ticker-item">🎨 <strong>2021 ARCHIVE:</strong> SUDEV SURESH RELEASES THE FIRST DESIGNERS' HANDBOOK</div>
+      <div class="ticker-item">💡 <strong>PEER LEARNING:</strong> NO GATEKEEPING, ALL BRANCHES WELCOME</div>
+      <!-- Duplicate -->
+      <div class="ticker-item">📖 <strong>THE STORY OF TINKERHUB CET</strong>: FOUNDED TO DESTROY BLUE-BOOK FORMALITIES</div>
+      <div class="ticker-item">🎨 <strong>2021 ARCHIVE:</strong> SUDEV SURESH RELEASES THE FIRST DESIGNERS' HANDBOOK</div>
+      <div class="ticker-item">💡 <strong>PEER LEARNING:</strong> NO GATEKEEPING, ALL BRANCHES WELCOME</div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar-wrapper">
+    <nav class="site-navbar">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-box">
+          <img src="assets/images/tinkLogo.png" alt="TinkerHub CET Logo">
+        </div>
+        <div class="brand-text">Tinker<span>Hub</span> CET</div>
+      </a>
+      <button id="mobile-nav-toggle-btn" class="mobile-nav-toggle">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link active">About & History</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="projects.html" class="nav-link">Maker Kootam</a></li>
+        <li><a href="poster-lab.html" class="nav-link">Poster Lab</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="btn-icon-round">🌙</button>
+        <a href="https://tinyurl.com/tinkerhubcet" target="_blank" rel="noopener noreferrer" class="btn-fun btn-yellow">
+          Join Us ⚡
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Page Header -->
+  <header class="content-section" style="margin-top: 40px; margin-bottom: 20px;">
+    <span class="section-tag">Chapter Roots</span>
+    <h1 class="section-title">The TinkerHub CET Philosophy</h1>
+    <p class="section-subtitle">
+      Why we exist, how we escaped the classroom blackboard, and the humans who built this community over the years.
+    </p>
+  </header>
+
+  <!-- About Grid -->
+  <section class="content-section reveal-on-scroll">
+    <div class="about-grid">
+      <div class="craft-card" style="transform: rotate(-0.5deg);">
+        <div class="washi-tape washi-tape-left"></div>
+        <h3>💡 Outside the Curriculum</h3>
+        <p>
+          The idea behind a community like TinkerHub is for students to get exposed to tech, real developer tools, and inspiring people outside of the rigid academic curriculum.
+        </p>
+        <p>
+          What an engineer faces when stepping out of college is a hyper-competitive world. Without practical exposure to Git, modern cloud platforms, AI models, and real hardware, making a name for oneself is hard. TinkerHub bridges that gap by encouraging open-source contributions, maker hackathons, research papers, and patent filings.
+        </p>
+      </div>
+
+      <div class="craft-card" style="transform: rotate(0.8deg);">
+        <div class="washi-tape washi-tape-right"></div>
+        <h3>🤝 The Peer-to-Peer Rule</h3>
+        <p>
+          The defining separator of TinkerHub CET is that it is an open community for all with <strong>absolutely zero barriers to entry</strong>.
+        </p>
+        <p>
+          No GPA cutoffs, no entrance test, no gatekeeping. If a final-year CS student knows how to build a microservices cluster, they mentor a first-year Mechanical student who wants to build an automated lawnmower. Learning here is natural, spontaneous, and shared over canteen tea.
+        </p>
+      </div>
+    </div>
+
+    <div style="max-width: 720px; margin: 40px auto 0;">
+      <div class="sticky-note">
+        📌 <strong>The Golden Rule of TinkerHub CET:</strong><br>
+        <em>"If you build something silly that fails, you are celebrated. If you build something that sparks and blows up the breadboard, you get high-fives and a multimeter. The only failure here is being afraid to try."</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Timeline -->
+  <section class="content-section reveal-on-scroll">
+    <div class="section-header">
+      <span class="section-tag" style="background: var(--tinker-green);">Milestones</span>
+      <h2 class="section-title">Community Timeline</h2>
+      <p class="section-subtitle">From virtual late-night Discord calls to a thriving campus maker culture.</p>
+    </div>
+
+    <div class="history-scrapbook" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+      <div class="craft-card">
+        <span class="stamp stamp-teal" style="font-size:0.7rem; margin-bottom:10px;">2020 · THE SPARK</span>
+        <h4>Virtual Hackathons</h4>
+        <p style="font-size:0.9rem; color:var(--ink-muted);">
+          BitFlip Hackathon launches on Devfolio with 106 hackers, 12 national sponsors, and 9 groundbreaking student projects built in isolation during lockdown.
+        </p>
+      </div>
+
+      <div class="craft-card">
+        <span class="stamp stamp-yellow" style="font-size:0.7rem; margin-bottom:10px; color:var(--tinker-black); border-color:var(--tinker-black); background:var(--tinker-yellow);">2021 · THE CODE & HANDBOOK</span>
+        <h4>Designers' Handbook</h4>
+        <p style="font-size:0.9rem; color:var(--ink-muted);">
+          Sudev Suresh Sreedevi crafts the official <em>Designers' Handbook</em>, formalizing the #FFCD10 and #205B67 color palette, checkerboard feed, and 720×1280 status guidelines.
+        </p>
+      </div>
+
+      <div class="craft-card">
+        <span class="stamp stamp-green" style="font-size:0.7rem; margin-bottom:10px;">2022 · MAKER KOOTAM</span>
+        <h4>Offline Hardware Lab</h4>
+        <p style="font-size:0.9rem; color:var(--ink-muted);">
+          Physical campus meetups resume. Maker Kootam launches hands-on hardware sprints, IoT hack nights, and peer mentoring sessions across all engineering branches.
+        </p>
+      </div>
+
+      <div class="craft-card">
+        <span class="stamp stamp-red" style="font-size:0.7rem; margin-bottom:10px;">2026 · DRISHTI REVIVAL</span>
+        <h4>TinkerHub Revanced</h4>
+        <p style="font-size:0.9rem; color:var(--ink-muted);">
+          The website is completely reimagined in 3 hours for Drishti 2026, celebrating fun, craft paper aesthetics, and fluid interactions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHIVAL POLAROID SCRAPBOOK ("Into the History") -->
+  <section class="content-section reveal-on-scroll">
+    <div class="section-header">
+      <span class="section-tag" style="background: var(--tinker-red); color: white;">Hall of Legends</span>
+      <h2 class="section-title">Into The History (Archival Scrapbook)</h2>
+      <p class="section-subtitle">
+        Authentic polaroids from the TinkerHub CET archives honoring previous leads, achievers, and core contributors.
+      </p>
+    </div>
+
+    <div class="history-scrapbook">
+      <!-- Nanda Kishor M Pai -->
+      <div class="polaroid-card">
+        <div class="washi-tape washi-tape-top"></div>
+        <div class="polaroid-img-wrapper">
+          <img src="assets/images/team.png" alt="TinkerHub CET Community">
+        </div>
+        <div class="polaroid-caption">Nanda Kishor M Pai</div>
+        <div class="polaroid-role">Founding Campus Lead</div>
+      </div>
+
+      <!-- Sudev Suresh Sreedevi -->
+      <div class="polaroid-card">
+        <div class="washi-tape washi-tape-top"></div>
+        <div class="polaroid-img-wrapper">
+          <img src="assets/images/sudev.jpg" alt="Sudev Suresh Sreedevi">
+        </div>
+        <div class="polaroid-caption">Sudev Suresh Sreedevi</div>
+        <div class="polaroid-role">Author of Designers' Handbook · Co-Chair</div>
+      </div>
+
+      <!-- Nandana Sreeraj -->
+      <div class="polaroid-card">
+        <div class="washi-tape washi-tape-top"></div>
+        <div class="polaroid-img-wrapper">
+          <img src="assets/images/nandanasree.jpg" alt="Nandana Sreeraj">
+        </div>
+        <div class="polaroid-caption">Nandana Sreeraj</div>
+        <div class="polaroid-role">ML Intern @ Purplle · Townhall Speaker</div>
+      </div>
+
+      <!-- Vishnu Prakash -->
+      <div class="polaroid-card">
+        <div class="washi-tape washi-tape-top"></div>
+        <div class="polaroid-img-wrapper">
+          <img src="assets/images/vishnu.jpg" alt="Vishnu Prakash">
+        </div>
+        <div class="polaroid-caption">Vishnu Prakash</div>
+        <div class="polaroid-role">Ethereum India Fellow · Vice Chairperson</div>
+      </div>
+
+      <!-- BitFlip Hackathon Crew -->
+      <div class="polaroid-card">
+        <div class="washi-tape washi-tape-top"></div>
+        <div class="polaroid-img-wrapper">
+          <img src="assets/images/hackthon_1.jpg" alt="Hackathon Moments">
+        </div>
+        <div class="polaroid-caption">BitFlip Hackathon '20</div>
+        <div class="polaroid-role">Late nights, caffeine & 106 hackers</div>
+      </div>
+
+      <!-- ISQIP Hackathon -->
+      <div class="polaroid-card">
+        <div class="washi-tape washi-tape-top"></div>
+        <div class="polaroid-img-wrapper">
+          <img src="assets/images/hackthon_2.jpg" alt="Offline Tinkering">
+        </div>
+        <div class="polaroid-caption">ISQIP Hackathon '21</div>
+        <div class="polaroid-role">1st Prize ALS device & Food donor team</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRANK MODALS INCLUDE -->
+  <div id="prank-ktu-modal" class="prank-modal-overlay">
+    <div class="ktu-panic-box">
+      <div class="ktu-warning-stripes"></div>
+      <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--tinker-red); margin-bottom: 12px;">⚠️ KTU PORTAL ACADEMIC SHORTAGE ALERT</h3>
+      <p style="font-family: var(--font-typewriter); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+        Your attendance in <em>"Solid Thermodynamics"</em> has plunged to <strong>41.2%</strong>.
+      </p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <button id="btn-bribe-dean" class="btn-fun btn-red">Bribe Dean with Canteen Samosa 🥟</button>
+        <button id="btn-run-mech" class="btn-fun btn-white">Flee to Mechanical Lab 🏃💨</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="prank-matrix-modal" class="prank-modal-overlay">
+    <div class="matrix-terminal-box">
+      <div class="terminal-header">
+        <span>root@tinkerhub-cet:~# /opt/scripts/bypass_ktu_grades.sh</span>
+        <button id="btn-matrix-close" style="background:none; border:none; color:#00FF66; font-family:monospace; font-size:1.2rem; cursor:pointer;">[X]</button>
+      </div>
+      <div id="matrix-terminal-stream" class="terminal-stream"></div>
+      <div style="text-align: right; margin-top: 12px;">
+        <button class="btn-fun btn-green" onclick="document.getElementById('btn-matrix-close').click();" style="font-size:0.8rem; padding: 4px 12px;">I Understand, I Will Study Now 🫡</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="rickroll-overlay" class="prank-modal-overlay">
+    <div class="retro-tv">
+      <button id="tv-close-btn" class="tv-close-btn">✕</button>
+      <div class="tv-screen"><img src="assets/images/rick.gif" alt="Rick Astley"></div>
+      <div class="rick-marquee">YOU'VE BEEN TINKER-ROLLED! 🕺</div>
+      <div class="rick-subtext">Rick Astley honors your curiosity! Now get back to coding!</div>
+      <button class="btn-fun btn-yellow" onclick="document.getElementById('tv-close-btn').click();">Back to TinkerHub 😎</button>
+    </div>
+  </div>
+
+  <button id="sound-toggle-btn" class="sound-toggle-btn" title="Toggle Sound FX">🔊</button>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <h4>TinkerHub CET</h4>
+          <p>The official student chapter at College of Engineering, Trivandrum.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Site Pages</h5>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About & History</a></li>
+            <li><a href="events.html">Events & Hackathons</a></li>
+            <li><a href="projects.html">Maker Kootam Projects</a></li>
+            <li><a href="poster-lab.html">Sudev Suresh Poster Lab</a></li>
+            <li><a href="team.html">Current Execom Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Connect Online</h5>
+          <ul class="footer-links-list">
+            <li><a href="https://instagram.com/tinkerhubcet" target="_blank" rel="noopener noreferrer">Instagram (@tinkerhubcet) ↗</a></li>
+            <li><a href="https://www.linkedin.com/company/74303785/" target="_blank" rel="noopener noreferrer">LinkedIn (TinkerHub CET) ↗</a></li>
+            <li><a href="mailto:tinkercet@gmail.com">tinkercet@gmail.com ✉️</a></li>
+            <li><a href="#" class="trigger-matrix-hack" style="color: var(--tinker-red);">Admin Master Key 🔑</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>Crafted with pure HTML, CSS & JavaScript for <strong>Drishti 2026</strong>.</div>
+        <div>Designed by <strong>SoloGuy (Ajo Jose)</strong></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FBF6E6">
+  <title>Sudev Suresh Poster Lab · TinkerHub CET</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;700;800;900&family=Patrick+Hand&family=Space+Grotesk:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="assets/images/tinkLogo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="scroll-progress-bar" aria-hidden="true"></div>
+  <div class="notebook-margin-line" aria-hidden="true"></div>
+
+  <!-- Announcement Ticker -->
+  <div class="announcement-ticker">
+    <div class="ticker-track">
+      <div class="ticker-item">🎨 <strong>THE DESIGNERS' HANDBOOK:</strong> AUTHORED IN 2021 BY SUDEV SURESH SREEDEVI</div>
+      <div class="ticker-item">📐 <strong>RULE 1:</strong> 10% MINIMUM PADDING AROUND THE TINKERHUB CET LOGO</div>
+      <div class="ticker-item">🏁 <strong>RULE 2:</strong> ALTERNATE LIGHT & DARK POSTERS FOR A CHECKERBOARD FEED</div>
+      <!-- Duplicate -->
+      <div class="ticker-item">🎨 <strong>THE DESIGNERS' HANDBOOK:</strong> AUTHORED IN 2021 BY SUDEV SURESH SREEDEVI</div>
+      <div class="ticker-item">📐 <strong>RULE 1:</strong> 10% MINIMUM PADDING AROUND THE TINKERHUB CET LOGO</div>
+      <div class="ticker-item">🏁 <strong>RULE 2:</strong> ALTERNATE LIGHT & DARK POSTERS FOR A CHECKERBOARD FEED</div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar-wrapper">
+    <nav class="site-navbar">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-box">
+          <img src="assets/images/tinkLogo.png" alt="TinkerHub CET Logo">
+        </div>
+        <div class="brand-text">Tinker<span>Hub</span> CET</div>
+      </a>
+      <button id="mobile-nav-toggle-btn" class="mobile-nav-toggle">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About & History</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="projects.html" class="nav-link">Maker Kootam</a></li>
+        <li><a href="poster-lab.html" class="nav-link active">Poster Lab</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="btn-icon-round">🌙</button>
+        <a href="https://tinyurl.com/tinkerhubcet" target="_blank" rel="noopener noreferrer" class="btn-fun btn-yellow">
+          Join Us ⚡
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Page Header -->
+  <header class="content-section" style="margin-top: 40px; margin-bottom: 20px;">
+    <span class="section-tag" style="background: var(--tinker-teal); color: white;">Interactive Guidelines</span>
+    <h1 class="section-title">The Sudev Suresh Poster & Status Lab</h1>
+    <p class="section-subtitle">
+      Directly implementing the visual identity, checkerboard rules, and 720×1280 status drop shadows defined in the <em>Designers' Handbook</em>.
+    </p>
+  </header>
+
+  <!-- Interactive Lab -->
+  <section class="content-section">
+    <div class="status-maker-section">
+      <div class="washi-tape washi-tape-left"></div>
+      
+      <div class="status-maker-grid">
+        <!-- Controls -->
+        <div class="status-controls">
+          <div class="form-group">
+            <label for="status-input-title">Event / Poster Title:</label>
+            <input type="text" id="status-input-title" class="form-input" value="Workshop on Modern Git & Open Source">
+          </div>
+
+          <div class="form-group">
+            <label for="status-input-speaker">Guest Speaker / Mentors:</label>
+            <input type="text" id="status-input-speaker" class="form-input" value="Linus Torvalds' Biggest Fan">
+          </div>
+
+          <div class="form-group">
+            <label for="status-input-type">Category (Handbook Checklist):</label>
+            <select id="status-input-type" class="form-select">
+              <option value="Workshop / Hands-on">Workshops, Seminars</option>
+              <option value="Tech Talk / Interview">Tech Talks, Interviews</option>
+              <option value="Congratulations / Achiever">Congratulating Achievers</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="status-theme-select">Checkerboard Theme (Handbook Rule):</label>
+            <select id="status-theme-select" class="form-select">
+              <option value="light">Light Theme (Base #FFFFFF, Text #1A1F20)</option>
+              <option value="dark">Dark Theme (Base #1A1F20, Text #FFFFFF)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="status-accent-select">Official Accent Color (Handbook Palette):</label>
+            <select id="status-accent-select" class="form-select">
+              <option value="#FFCD10">Tinker Yellow (#FFCD10)</option>
+              <option value="#205B67">Tinker Teal (#205B67)</option>
+              <option value="#95BF15">Tinker Green (#95BF15)</option>
+              <option value="#05BFCE">Tinker Cyan (#05BFCE)</option>
+              <option value="#EE1700">Tinker Red (#EE1700)</option>
+              <option value="#0060FF">Tinker Blue (#0060FF)</option>
+            </select>
+          </div>
+
+          <div style="margin-top: 18px; padding: 14px; background: rgba(32, 91, 103, 0.08); border-radius: 8px; font-family: var(--font-friendly); font-size: 1.15rem;">
+            📐 <strong>Handbook Verification Checklist:</strong><br>
+            ✓ TinkerHub CET logo with 10% minimum boundary padding<br>
+            ✓ 2000×2000 base square poster in 720×1280 status holder<br>
+            ✓ Alternating Light/Dark background for Instagram checkerboard
+          </div>
+        </div>
+
+        <!-- Live Status Preview -->
+        <div style="text-align: center;">
+          <div id="status-preview-frame" class="handbook-status-frame light-spec">
+            <div id="status-inner-poster" class="status-inner-poster" style="border-color: #FFCD10;">
+              <!-- Official logo with 10% boundary padding -->
+              <div class="status-logo-header">
+                <img src="assets/images/tinkLogo.png" alt="TinkerHub Logo" class="status-logo-img">
+                <span id="status-poster-tag" style="font-family: var(--font-typewriter); font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; background: #FFCD10; color: #1A1F20; font-weight: bold;">
+                  WORKSHOP
+                </span>
+              </div>
+
+              <div>
+                <h4 id="status-poster-title" class="status-poster-title">Workshop on Modern Git & Open Source</h4>
+                <div id="status-poster-speaker" style="font-family: var(--font-friendly); font-size: 0.85rem; margin-top: 4px;">
+                  Speaker: Linus Torvalds' Biggest Fan
+                </div>
+              </div>
+
+              <div class="status-poster-meta">
+                <div>📅 Saturday · 7:00 PM</div>
+                <div>📍 Mechanical Seminar Hall / GMeet</div>
+                <div>🔗 tinyurl.com/tinkerhubcet</div>
+              </div>
+            </div>
+            
+            <div style="margin-top: 14px; font-family: var(--font-typewriter); font-size: 0.68rem; opacity: 0.7;">
+              720 × 1280px Status Holder Preview (Handbook Fig 1)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRANK MODALS INCLUDE -->
+  <div id="prank-ktu-modal" class="prank-modal-overlay">
+    <div class="ktu-panic-box">
+      <div class="ktu-warning-stripes"></div>
+      <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--tinker-red); margin-bottom: 12px;">⚠️ KTU PORTAL ACADEMIC SHORTAGE ALERT</h3>
+      <p style="font-family: var(--font-typewriter); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+        Your attendance in <em>"Thermodynamics"</em> has plunged to <strong>41.2%</strong>.
+      </p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <button id="btn-bribe-dean" class="btn-fun btn-red">Bribe Dean with Canteen Samosa 🥟</button>
+        <button id="btn-run-mech" class="btn-fun btn-white">Flee to Mechanical Lab 🏃💨</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="prank-matrix-modal" class="prank-modal-overlay">
+    <div class="matrix-terminal-box">
+      <div class="terminal-header">
+        <span>root@tinkerhub-cet:~# /opt/scripts/bypass_ktu_grades.sh</span>
+        <button id="btn-matrix-close" style="background:none; border:none; color:#00FF66; font-family:monospace; font-size:1.2rem; cursor:pointer;">[X]</button>
+      </div>
+      <div id="matrix-terminal-stream" class="terminal-stream"></div>
+      <div style="text-align: right; margin-top: 12px;">
+        <button class="btn-fun btn-green" onclick="document.getElementById('btn-matrix-close').click();" style="font-size:0.8rem; padding: 4px 12px;">I Understand, I Will Study Now 🫡</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="rickroll-overlay" class="prank-modal-overlay">
+    <div class="retro-tv">
+      <button id="tv-close-btn" class="tv-close-btn">✕</button>
+      <div class="tv-screen"><img src="assets/images/rick.gif" alt="Rick Astley"></div>
+      <div class="rick-marquee">YOU'VE BEEN TINKER-ROLLED! 🕺</div>
+      <div class="rick-subtext">Rick Astley honors your curiosity! Now get back to coding!</div>
+      <button class="btn-fun btn-yellow" onclick="document.getElementById('tv-close-btn').click();">Back to TinkerHub 😎</button>
+    </div>
+  </div>
+
+  <button id="sound-toggle-btn" class="sound-toggle-btn" title="Toggle Sound FX">🔊</button>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <h4>TinkerHub CET</h4>
+          <p>The official student chapter at College of Engineering, Trivandrum.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Site Pages</h5>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About & History</a></li>
+            <li><a href="events.html">Events & Hackathons</a></li>
+            <li><a href="projects.html">Maker Kootam Projects</a></li>
+            <li><a href="poster-lab.html">Sudev Suresh Poster Lab</a></li>
+            <li><a href="team.html">Current Execom Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Connect Online</h5>
+          <ul class="footer-links-list">
+            <li><a href="https://instagram.com/tinkerhubcet" target="_blank" rel="noopener noreferrer">Instagram (@tinkerhubcet) ↗</a></li>
+            <li><a href="https://www.linkedin.com/company/74303785/" target="_blank" rel="noopener noreferrer">LinkedIn (TinkerHub CET) ↗</a></li>
+            <li><a href="mailto:tinkercet@gmail.com">tinkercet@gmail.com ✉️</a></li>
+            <li><a href="#" class="trigger-matrix-hack" style="color: var(--tinker-red);">Admin Master Key 🔑</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>Crafted with pure HTML, CSS & JavaScript for <strong>Drishti 2026</strong>.</div>
+        <div>Designed by <strong>SoloGuy (Ajo Jose)</strong></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

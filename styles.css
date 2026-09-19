@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TinkerHub CET - Revanced Edition
+   TinkerHub CET - Revanced Edition (Multi-Page Version)
    Inspired by nothingonpurpose.com + Official TinkerHub CET Designers' Handbook
    ========================================================================== */
 
@@ -38,7 +38,7 @@
   --radius-sketch: 6px;
 }
 
-/* Dark Theme Overrides (Respecting Handbook Dark Theme: #1A1F20 base background, #FFFFFF text) */
+/* Dark Theme Overrides (Respecting Handbook Dark Theme: #1A1F20 base, #FFFFFF text) */
 body.dark-mode {
   --bg-paper: #1A1F20;
   --bg-paper-dark: #141819;
@@ -85,6 +85,18 @@ body.dark-mode {
     linear-gradient(to right, #05bfce12 1px, transparent 1px);
 }
 
+/* TOP SCROLL PROGRESS BAR */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--tinker-teal), var(--tinker-yellow), var(--tinker-green), var(--tinker-cyan), var(--tinker-red));
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
 /* Subtle Notebook Margin Line on Left */
 .notebook-margin-line {
   position: fixed;
@@ -101,6 +113,18 @@ body.dark-mode {
   .notebook-margin-line {
     display: none;
   }
+}
+
+/* SCROLL REVEAL ANIMATIONS */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 /* TYPOGRAPHY UTILS */
@@ -249,7 +273,7 @@ body.dark-mode .highlight-teal {
 
 .ticker-track {
   display: flex;
-  animation: tickerScroll 28s linear infinite;
+  animation: tickerScroll 32s linear infinite;
 }
 
 .ticker-track:hover {
@@ -343,7 +367,7 @@ body.dark-mode .brand-text span {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   list-style: none;
 }
 
@@ -351,19 +375,22 @@ body.dark-mode .brand-text span {
   text-decoration: none;
   color: var(--ink);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   position: relative;
   padding: 4px 8px;
+  border-radius: 6px;
   transition: var(--transition-fluid);
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link.active {
   color: var(--tinker-teal);
-  transform: translateY(-2px) scale(1.05);
+  background: rgba(32, 91, 103, 0.08);
+  transform: translateY(-2px);
 }
 
-body.dark-mode .nav-link:hover {
+body.dark-mode .nav-link:hover, body.dark-mode .nav-link.active {
   color: var(--tinker-yellow);
+  background: rgba(255, 205, 16, 0.12);
 }
 
 .nav-actions {
@@ -461,9 +488,22 @@ body.dark-mode .nav-link:hover {
   color: var(--ink);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 990px) {
   .nav-links {
     display: none;
+    position: absolute;
+    top: 70px;
+    left: 16px;
+    right: 16px;
+    background: var(--bg-card);
+    border: 3px solid var(--paper-border);
+    border-radius: 16px;
+    padding: 20px;
+    flex-direction: column;
+    box-shadow: var(--shadow-hard-lg);
+  }
+  .nav-links.open {
+    display: flex;
   }
   .mobile-nav-toggle {
     display: block;
@@ -596,7 +636,7 @@ body.dark-mode .stat-num {
   text-transform: uppercase;
 }
 
-/* HERO INTERACTIVE RECEIPT / CERTIFICATE CARD (nothingonpurpose inspiration) */
+/* HERO INTERACTIVE RECEIPT CARD (nothingonpurpose inspiration) */
 .hero-card-container {
   position: relative;
   display: flex;
@@ -724,7 +764,7 @@ body.dark-mode .stat-num {
 /* SECTION STRUCTURE */
 .content-section {
   max-width: 1200px;
-  margin: 80px auto;
+  margin: 60px auto;
   padding: 0 20px;
   position: relative;
 }
@@ -767,7 +807,7 @@ body.dark-mode .section-tag {
   margin-top: 6px;
 }
 
-/* ABOUT SECTION: CRAFT PAPER CARDS */
+/* CRAFT CARDS */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -951,7 +991,7 @@ body.dark-mode .filter-btn.active {
   color: var(--ink);
 }
 
-/* MAKER KOOTAM / PROJECTS SHOWCASE */
+/* PROJECTS SHOWCASE */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -1060,14 +1100,14 @@ body.dark-mode .filter-btn.active {
   border-color: var(--tinker-black);
 }
 
-/* INTERACTIVE CERTIFICATE OF CERTIFIED TINKERER SECTION */
+/* INTERACTIVE CERTIFICATE SECTION */
 .cert-interactive-section {
   background: var(--bg-card);
   border: 4px solid var(--paper-border);
   border-radius: 12px;
   box-shadow: var(--shadow-hard-lg);
   padding: 40px 30px;
-  margin: 60px auto;
+  margin: 40px auto;
   position: relative;
 }
 
@@ -1167,20 +1207,14 @@ body.dark-mode .filter-btn.active {
   margin: 12px 0 20px;
 }
 
-.cert-stamp-box {
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
-}
-
-/* HANDBOOK-COMPLIANT POSTER / STATUS MAKER PLAYGROUND */
+/* HANDBOOK STATUS MAKER */
 .status-maker-section {
   background: var(--bg-card);
   border: 4px solid var(--paper-border);
   border-radius: 12px;
   box-shadow: var(--shadow-hard-lg);
   padding: 40px 30px;
-  margin: 60px auto;
+  margin: 40px auto;
   position: relative;
 }
 
@@ -1197,7 +1231,6 @@ body.dark-mode .filter-btn.active {
   }
 }
 
-/* Exact Status Holder from Handbook Fig 1 (720x1280 scale down) */
 .handbook-status-frame {
   width: 280px;
   height: 497px; /* 720:1280 aspect ratio */
@@ -1214,14 +1247,12 @@ body.dark-mode .filter-btn.active {
   overflow: hidden;
 }
 
-/* Light Theme Status Holder Specs from Handbook */
 .handbook-status-frame.light-spec {
   background-color: #FFFFFF;
   color: #1A1F20;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* Dark Theme Status Holder Specs from Handbook */
 .handbook-status-frame.dark-spec {
   background-color: #1A1F20;
   color: #FFFFFF;
@@ -1230,7 +1261,7 @@ body.dark-mode .filter-btn.active {
 
 .status-inner-poster {
   width: 90%;
-  aspect-ratio: 1 / 1; /* 2000x2000 square poster from handbook */
+  aspect-ratio: 1 / 1;
   border: 2px solid currentColor;
   border-radius: 8px;
   display: flex;
@@ -1250,7 +1281,7 @@ body.dark-mode .filter-btn.active {
 .status-logo-img {
   width: 38px;
   height: 38px;
-  padding: 4px; /* 10% padding */
+  padding: 4px;
   border-radius: 50%;
   background: white;
   border: 1px solid #1A1F20;
@@ -1269,7 +1300,7 @@ body.dark-mode .filter-btn.active {
   opacity: 0.85;
 }
 
-/* HISTORY & ARCHIVE SECTION */
+/* HISTORY & ARCHIVES */
 .history-scrapbook {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1294,13 +1325,8 @@ body.dark-mode .filter-btn.active {
   z-index: 20;
 }
 
-.polaroid-card:nth-child(even) {
-  transform: rotate(2deg);
-}
-
-.polaroid-card:nth-child(odd) {
-  transform: rotate(-2deg);
-}
+.polaroid-card:nth-child(even) { transform: rotate(2deg); }
+.polaroid-card:nth-child(odd) { transform: rotate(-2deg); }
 
 .polaroid-img-wrapper {
   width: 100%;
@@ -1334,7 +1360,7 @@ body.dark-mode .filter-btn.active {
   text-transform: uppercase;
 }
 
-/* CURRENT EXECOM TEAM (Modern Neo-Brutalist / Fun) */
+/* TEAM SECTION */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1375,12 +1401,11 @@ body.dark-mode .filter-btn.active {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition: var(--transition-fluid);
 }
 
-.team-avatar-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.team-avatar-box:hover {
+  transform: scale(1.1) rotate(6deg);
 }
 
 .team-name {
@@ -1438,13 +1463,17 @@ body.dark-mode .team-role {
   color: var(--tinker-black);
 }
 
-/* RICKROLL MODAL & EASTER EGG OVERLAY */
-.rickroll-overlay {
+/* ==========================================================================
+   PRANK SUITE: 4 DIFFERENT HILARIOUS PRANKS
+   ========================================================================== */
+
+/* PRANK OVERLAY BASE */
+.prank-modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(26, 31, 32, 0.88);
   backdrop-filter: blur(8px);
-  z-index: 1000;
+  z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1454,17 +1483,87 @@ body.dark-mode .team-role {
   transition: opacity 0.3s ease;
 }
 
-.rickroll-overlay.active {
+.prank-modal-overlay.active {
   opacity: 1;
   pointer-events: auto;
 }
 
+/* PRANK 1: KTU ATTENDANCE SHORTAGE MODAL */
+.ktu-panic-box {
+  background: #FFF8E7;
+  border: 6px solid #EE1700;
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 580px;
+  width: 100%;
+  color: #1A1F20;
+  box-shadow: 12px 12px 0px #EE1700;
+  text-align: center;
+  position: relative;
+  animation: tvPopIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ktu-warning-stripes {
+  height: 12px;
+  background: repeating-linear-gradient(45deg, #EE1700, #EE1700 10px, #FFCD10 10px, #FFCD10 20px);
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+/* PRANK 2: CRT MATRIX TERMINAL */
+.matrix-terminal-box {
+  background: #050B05;
+  border: 4px solid #00FF66;
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 680px;
+  width: 100%;
+  box-shadow: 0 0 30px rgba(0, 255, 102, 0.4);
+  font-family: monospace;
+  color: #00FF66;
+  position: relative;
+  text-align: left;
+}
+
+.terminal-header {
+  border-bottom: 1px solid #00FF66;
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.terminal-stream {
+  min-height: 180px;
+  max-height: 260px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* PRANK 3: ANTI-GRAVITY / SCREEN SHAKE */
+body.chaos-mode {
+  animation: earthquake 0.6s infinite alternate;
+}
+
+@keyframes earthquake {
+  0% { transform: translate(2px, 1px) rotate(0deg); }
+  20% { transform: translate(-3px, -2px) rotate(-1deg); }
+  40% { transform: translate(-1px, 3px) rotate(1deg); }
+  60% { transform: translate(3px, 1px) rotate(0deg); }
+  80% { transform: translate(1px, -2px) rotate(1deg); }
+  100% { transform: translate(-2px, 2px) rotate(-1deg); }
+}
+
+/* PRANK 4: RETRO TV (Rickroll 2.0 with offline animated GIF) */
 .retro-tv {
   background: #E8D9BE;
   border: 6px solid #1A1F20;
   border-radius: 20px;
   padding: 28px;
-  max-width: 600px;
+  max-width: 520px;
   width: 100%;
   box-shadow: 12px 12px 0px #EE1700;
   text-align: center;
@@ -1483,15 +1582,18 @@ body.dark-mode .team-role {
   border-radius: 12px;
   overflow: hidden;
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   margin-bottom: 20px;
   box-shadow: inset 0 0 20px rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.tv-screen iframe {
+.tv-screen img {
   width: 100%;
   height: 100%;
-  border: none;
+  object-fit: cover;
 }
 
 .rick-marquee {
@@ -1524,6 +1626,9 @@ body.dark-mode .team-role {
   cursor: pointer;
   box-shadow: 3px 3px 0px #1A1F20;
   transition: var(--transition-fluid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tv-close-btn:hover {
@@ -1535,7 +1640,7 @@ body.dark-mode .team-role {
   border-top: 4px solid var(--paper-border);
   background: var(--bg-card);
   padding: 60px 20px 40px;
-  margin-top: 100px;
+  margin-top: 80px;
   position: relative;
 }
 
@@ -1648,4 +1753,47 @@ body.dark-mode .footer-links-list a:hover {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
+}
+
+/* ==========================================================================
+   PRINT STYLES (CRITICAL: PRINTS ONLY THE CERTIFICATE OR POSTER!)
+   ========================================================================== */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide everything on the page */
+  body > * {
+    display: none !important;
+  }
+
+  /* Show only the designated printable certificate container */
+  #printable-certificate-container,
+  #printable-certificate-container * {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  #printable-certificate-container {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 100% !important;
+    max-width: 650px !important;
+    box-shadow: none !important;
+    border: 4px double #1A1F20 !important;
+    background: #FFFDF4 !important;
+    padding: 40px !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .cert-stamp-box, #cert-preview-stamp {
+    display: inline-flex !important;
+  }
 }
