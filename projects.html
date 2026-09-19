@@ -18,6 +18,28 @@
   <div id="scroll-progress-bar" aria-hidden="true"></div>
   <div class="notebook-margin-line" aria-hidden="true"></div>
 
+  <!-- Emergency Anti-Gravity Reset Banner -->
+  <div id="antigravity-reset-banner" class="antigravity-banner" style="display:none; position:fixed; top:12px; left:50%; transform:translateX(-50%); z-index:99999; background:var(--tinker-red); color:white; padding:12px 24px; border-radius:50px; border:3px solid #1A1F20; box-shadow:5px 5px 0px #1A1F20, 0 10px 30px rgba(0,0,0,0.3); align-items:center; gap:16px;">
+    <span class="gravity-fucked-text">
+      <span>🚨</span>
+      <span class="g-word">
+        <span class="g-char" style="--rot:-10deg; --y:-2px;">L</span><span class="g-char" style="--rot:14deg; --y:3px;">O</span><span class="g-char" style="--rot:-18deg; --y:-4px;">O</span><span class="g-char" style="--rot:8deg; --y:2px;">K</span><span class="g-char" style="--rot:22deg; --y:4px;">,</span>
+      </span>
+      <span class="g-word">
+        <span class="g-char" style="--rot:16deg; --y:-3px;">G</span><span class="g-char" style="--rot:-14deg; --y:2px;">R</span><span class="g-char" style="--rot:10deg; --y:-4px;">A</span><span class="g-char" style="--rot:-20deg; --y:3px;">V</span><span class="g-char" style="--rot:18deg; --y:-2px;">I</span><span class="g-char" style="--rot:-8deg; --y:4px;">T</span><span class="g-char" style="--rot:12deg; --y:-3px;">Y</span>
+      </span>
+      <span class="g-word">
+        <span class="g-char" style="--rot:-15deg; --y:3px;">F</span><span class="g-char" style="--rot:20deg; --y:-4px;">U</span><span class="g-char" style="--rot:-12deg; --y:2px;">C</span><span class="g-char" style="--rot:16deg; --y:-3px;">K</span><span class="g-char" style="--rot:-18deg; --y:4px;">E</span><span class="g-char" style="--rot:10deg; --y:-2px;">D</span>
+      </span>
+      <span class="g-word">
+        <span class="g-char" style="--rot:-22deg; --y:-4px;">U</span><span class="g-char" style="--rot:25deg; --y:3px;">P</span><span class="g-char g-upside-down" style="--rot:180deg; --y:0px;">!</span>
+      </span>
+    </span>
+    <button id="btn-reset-gravity" class="btn-fun btn-yellow" style="padding:6px 14px; font-size:0.85rem; box-shadow:3px 3px 0px #1A1F20;">
+      Fix Gravity Now 🧲
+    </button>
+  </div>
+
   <!-- Announcement Ticker -->
   <div class="announcement-ticker">
     <div class="ticker-track">
@@ -51,15 +73,19 @@
       </ul>
       <div class="nav-actions">
         <button id="theme-toggle-btn" class="btn-icon-round">🌙</button>
-        <a href="https://tinyurl.com/tinkerhubcet" target="_blank" rel="noopener noreferrer" class="btn-fun btn-yellow">
-          Join Us ⚡
+        <a href="https://tinyurl.com/tinkerhubcet" target="_blank" rel="noopener noreferrer" class="btn-fun btn-yellow btn-join-now">
+          Join Now <span class="emoji-dark-pill">⚡</span>
         </a>
       </div>
     </nav>
   </div>
 
   <!-- Page Header -->
-  <header class="content-section" style="margin-top: 40px; margin-bottom: 20px;">
+  <header class="content-section" style="margin-top: 40px; margin-bottom: 20px; position: relative;">
+    <div class="sticker sticker-round trigger-antigravity" style="top: 0px; right: 20px; background: var(--tinker-red); color: white; transform: rotate(-10deg); cursor: pointer;" title="Warning: Do not tap!">
+      <span style="font-size:1.1rem;">⚠️</span>
+      <span style="font-size:0.62rem;">DO NOT TAP</span>
+    </div>
     <span class="section-tag" style="background: var(--tinker-green);">Community Builds</span>
     <h1 class="section-title">Maker Kootam Projects</h1>
     <p class="section-subtitle">
